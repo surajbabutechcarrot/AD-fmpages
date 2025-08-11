@@ -1,0 +1,23 @@
+.main-header {
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    top: 0;
+    // height: size(80);
+    z-index: 1049;
+    background: $primary-color;
+    .logo{
+        border-right: 1px solid rgba(255, 255, 255, 0.20);
+        height: size(98);
+        img{
+            height: size(60);
+        }
+    }
+    .dark{
+        background: #0D0954;
+        @include max(1199.98){
+            background: transparent;
+        }
+    }
+}

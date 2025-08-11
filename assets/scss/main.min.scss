@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap');
+// bootstrap
+@import 'bootstrap/bootstrap';
+// Helpers
+@import 'mixins/mixins';
+@import 'pages/style-guide';
+@import 'base/reset';
+
+
+
+// Components
+@import 'components/headings';
+// @import 'components/font-kit';
+@import 'components/buttons';
+@import 'components/navigation';
+// @import 'components/plugins';
+
+
+// Pages
+@import 'pages/header';
+@import 'pages/home';
+@import 'pages/inner-pages';
+@import 'pages/footer';
