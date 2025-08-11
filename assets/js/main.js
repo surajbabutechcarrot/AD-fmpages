@@ -16,7 +16,19 @@ getBTTElm.addEventListener('click', e => {
 })
 
 
+$(document).ready(function () {
+    $('#sidebarToggle').click(function (e) {
+        e.stopPropagation(); // Prevent click from bubbling up
+        $('#sidebar').toggleClass('show');
+    });
 
+    // Close sidebar when clicking outside
+    $(document).click(function (event) {
+        if (!$(event.target).closest("#sidebar, #sidebarToggle").length) {
+            $("#sidebar").removeClass("show");
+        }
+    });
+});
 
 
 
@@ -30,12 +42,12 @@ getBtn.addEventListener('click', e => {
 
 
 const getDropDown = document.getElementsByClassName('main-nav');
-for ( div of getDropDown){
+for (div of getDropDown) {
     var selectLi = div.getElementsByTagName('li');
-    for ( li of selectLi){
-       if (li.contains(li.querySelector('ul'))) {
-        li.classList.add('submenu');
-        li.innerHTML += "<i></i>";
+    for (li of selectLi) {
+        if (li.contains(li.querySelector('ul'))) {
+            li.classList.add('submenu');
+            li.innerHTML += "<i></i>";
         }
     }
 }
@@ -93,8 +105,3 @@ window.addEventListener("load", () => {
     getElem.length > 0 ? (window.addEventListener('scroll', anim, false)) : null;
     getElem.length > 0 ? anim() : null;
 }, false);
-
-
-
-
-

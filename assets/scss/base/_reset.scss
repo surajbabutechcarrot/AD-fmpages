@@ -19,6 +19,9 @@ body {
     margin: 0 auto;
     padding-top: size(98);
 	font-family: "Albert Sans", sans-serif!important;
+	@include max(1199.98) {
+		padding-top: size(70);
+	}
 	*{
 		font-family: "Albert Sans", sans-serif!important;
 	}
