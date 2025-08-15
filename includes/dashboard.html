@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <title>Ad airport</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container-fluid h-100 d-flex align-items-center px-0">
+            <div class="logo col-auto ps-3 pe-3 ps-lg-3 pe-lg-3 d-flex align-items-center">
+                <a href="#">
+                    <img src="assets/images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="header-right col d-grid align-items-center">
+                <nav class="main-nav ps-lg-4">
+                    <ul class="d-xl-flex m-0 p-0 list-unstyled">
+                        <li class=""><a class="active" href="">Home</a></li>
+                        <li class=""><a href="">Settings</a></li>
+                        <li><a href="">Help</a></li>
+                        <li class="ms-auto">
+                            <a href="#" class="user-card d-flex py-3 py-xl-0 justify-content-end">
+                                <div class="user-info col-auto d-flex align-items-center me-2">
+                                    <div>
+                                        <span
+                                            class="user-name fs-6 text-lg-white fw-bold w-100 d-block mx-0 my-1 lh-1">Likitha
+                                            Komati</span>
+                                        <span
+                                            class="user-status fs-6 text-lg-white text-end w-100 d-block mx-0 my-1 lh-1">To
+                                            DO</span>
+                                    </div>
+                                </div>
+                                <div class="user-avatar col-auto">
+                                    <img src="assets/images/user-image.png" alt="user avatar">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="dark">
+                    <h6 class="text-white ps-3 ps-lg-5 mb-0 mt-auto py-2">Dashboard</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="mob-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="overlay"></div>
+    </header>
+    <main class="home-page">
+        <!-- Sidebar Toggle Button for Mobile -->
+        <section>
+            <div class="page-wrap container-fluid">
+                <!-- Toolbar -->
+                <div class="toolbar px-3">
+                    <!-- radios (map to Status column: In Progress -> Active, Completed -> Inactive) -->
+                    <div class="status-filters">
+                        <label class="form-check me-3">
+                            <input class="form-check-input" type="radio" name="statusFilter" value="Active" checked>
+                            <span class="ms-1">In Progress</span>
+                        </label>
+                        <label class="form-check">
+                            <input class="form-check-input" type="radio" name="statusFilter" value="Inactive">
+                            <span class="ms-1">Completed</span>
+                        </label>
+                    </div>
+
+                    <!-- keyword search -->
+                    <div class="keyword">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none">
+                            <path
+                                d="M14.1384 18.1645C18.6779 18.1645 22.3578 14.4845 22.3578 9.94502C22.3578 5.40555 18.6779 1.72559 14.1384 1.72559C9.59891 1.72559 5.91895 5.40555 5.91895 9.94502C5.91895 14.4845 9.59891 18.1645 14.1384 18.1645Z"
+                                stroke="#001871" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M1.80908 22.2743L8.32644 15.7563" stroke="#001871" stroke-width="2"
+                                stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <input id="keywordInput" type="text" placeholder="Keyword Search" />
+                    </div>
+
+                    <!-- actions -->
+                    <div class="toolbar-actions">
+                        <button class="btn-icon" id="refreshBtn" title="Refresh">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24"
+                                fill="none">
+                                <path
+                                    d="M12.6184 24C10.6257 24 8.66448 23.5039 6.9116 22.5563C5.15872 21.6087 3.66939 20.2395 2.57804 18.5724C1.4867 16.9052 0.827682 14.9925 0.660485 13.0069C0.493288 11.0213 0.823171 9.02535 1.62036 7.19915C2.41754 5.37295 3.65694 3.77401 5.22668 2.54665C6.79642 1.31928 8.64709 0.50213 10.6116 0.168946C12.5762 -0.164239 14.5928 -0.00296715 16.4795 0.638204C18.3661 1.27938 20.0634 2.38026 21.4181 3.8415C21.4887 3.913 21.5442 3.99796 21.5813 4.09133C21.6185 4.1847 21.6364 4.28457 21.6342 4.38503C21.632 4.48548 21.6096 4.58446 21.5684 4.6761C21.5272 4.76773 21.468 4.85015 21.3943 4.91846C21.3206 4.98677 21.2339 5.03958 21.1394 5.07374C21.0449 5.10791 20.9446 5.12274 20.8442 5.11736C20.7439 5.11198 20.6457 5.08649 20.5554 5.04241C20.4651 4.99833 20.3846 4.93655 20.3186 4.86075C18.6555 3.06677 16.4183 1.90977 13.9931 1.58949C11.5679 1.26921 9.10697 1.80576 7.0352 3.10651C4.96343 4.40725 3.41085 6.39055 2.64549 8.71399C1.88013 11.0374 1.95005 13.5552 2.84315 15.8326C3.73626 18.11 5.39651 20.0041 7.53727 21.1878C9.67803 22.3716 12.1649 22.7708 14.5686 22.3164C16.9723 21.862 19.1419 20.5827 20.7029 18.6992C22.2638 16.8157 23.1181 14.4463 23.1183 12C23.1183 11.8011 23.1974 11.6103 23.338 11.4697C23.4787 11.329 23.6694 11.25 23.8683 11.25C24.0673 11.25 24.258 11.329 24.3987 11.4697C24.5393 11.6103 24.6183 11.8011 24.6183 12C24.6146 15.1814 23.3491 18.2315 21.0995 20.4811C18.8498 22.7307 15.7998 23.9962 12.6184 24Z"
+                                    fill="#001871" />
+                                <path
+                                    d="M20.8684 5.25C20.6695 5.25 20.4787 5.17098 20.3381 5.03033C20.1974 4.88968 20.1184 4.69891 20.1184 4.5V0.75C20.1184 0.551088 20.1974 0.360322 20.3381 0.21967C20.4787 0.0790176 20.6695 0 20.8684 0C21.0673 0 21.2581 0.0790176 21.3987 0.21967C21.5394 0.360322 21.6184 0.551088 21.6184 0.75V4.5C21.6184 4.69891 21.5394 4.88968 21.3987 5.03033C21.2581 5.17098 21.0673 5.25 20.8684 5.25Z"
+                                    fill="#001871" />
+                                <path
+                                    d="M20.8684 5.25H17.1184C16.9195 5.25 16.7287 5.17098 16.5881 5.03033C16.4474 4.88968 16.3684 4.69891 16.3684 4.5C16.3684 4.30109 16.4474 4.11032 16.5881 3.96967C16.7287 3.82902 16.9195 3.75 17.1184 3.75H20.8684C21.0673 3.75 21.2581 3.82902 21.3987 3.96967C21.5394 4.11032 21.6184 4.30109 21.6184 4.5C21.6184 4.69891 21.5394 4.88968 21.3987 5.03033C21.2581 5.17098 21.0673 5.25 20.8684 5.25Z"
+                                    fill="#001871" />
+                            </svg>
+                        </button>
+                        <button class="btn-icon" id="downloadBtn" title="Download CSV">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 20 24"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.46019 23.6484C9.87046 24.0586 10.5038 24.1099 10.9698 23.8022C11.0364 23.7582 11.0996 23.7069 11.1582 23.6484L19.6483 15.1582C20.1172 14.6894 20.1172 13.9291 19.6483 13.4602C19.1793 12.9914 18.4192 12.9914 17.9503 13.4602L11.5099 19.9007V1.20068C11.5099 0.537568 10.9723 0 10.3092 0C9.64606 0 9.10851 0.537568 9.10851 1.20068V19.9007L2.6681 13.4602C2.19921 12.9914 1.43897 12.9914 0.970084 13.4602C0.501183 13.9291 0.501183 14.6894 0.970084 15.1582L9.46019 23.6484Z"
+                                    fill="#001871" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div class="data-card">
+                    <div class="table-wrap">
+                        <table id="ptwTable" class="table table-hover w-100">
+                            <thead>
+                                <tr>
+                                    <th>PTW Reference No</th>
+                                    <th>Requested Date</th>
+                                    <th>Requested By</th>
+                                    <th>Status</th>
+                                    <th>Last Action By</th>
+                                    <th>Last Action Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10001</a></td>
+                                    <td>12/04/2025</td>
+                                    <td>Leslie Alexander</td>
+                                    <td>Inactive</td>
+                                    <td>Cameron Williamson</td>
+                                    <td>14/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10002</a></td>
+                                    <td>15/04/2025</td>
+                                    <td>Darlene Robertson</td>
+                                    <td>Inactive</td>
+                                    <td>Guy Hawkins</td>
+                                    <td>16/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10003</a></td>
+                                    <td>17/04/2025</td>
+                                    <td>Bessie Cooper</td>
+                                    <td>Active</td>
+                                    <td>Leslie Alexander</td>
+                                    <td>19/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10004</a></td>
+                                    <td>18/04/2025</td>
+                                    <td>Jenny Wilson</td>
+                                    <td>Active</td>
+                                    <td>Darlene Robertson</td>
+                                    <td>20/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10005</a></td>
+                                    <td>19/04/2025</td>
+                                    <td>Michael Brown</td>
+                                    <td>Inactive</td>
+                                    <td>Bessie Cooper</td>
+                                    <td>21/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10006</a></td>
+                                    <td>20/04/2025</td>
+                                    <td>Ava Johnson</td>
+                                    <td>Active</td>
+                                    <td>Jenny Wilson</td>
+                                    <td>22/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10007</a></td>
+                                    <td>21/04/2025</td>
+                                    <td>William Smith</td>
+                                    <td>Inactive</td>
+                                    <td>Bessie Cooper</td>
+                                    <td>23/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10008</a></td>
+                                    <td>22/04/2025</td>
+                                    <td>Sophia Davis</td>
+                                    <td>Active</td>
+                                    <td>Jenny Wilson</td>
+                                    <td>24/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10009</a></td>
+                                    <td>23/04/2025</td>
+                                    <td>Oliver Martinez</td>
+                                    <td>Inactive</td>
+                                    <td>Cameron Williamson</td>
+                                    <td>25/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10010</a></td>
+                                    <td>24/04/2025</td>
+                                    <td>Charlotte Garcia</td>
+                                    <td>Inactive</td>
+                                    <td>Guy Hawkins</td>
+                                    <td>26/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10011</a></td>
+                                    <td>25/04/2025</td>
+                                    <td>Henry Lewis</td>
+                                    <td>Active</td>
+                                    <td>Leslie Alexander</td>
+                                    <td>27/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10012</a></td>
+                                    <td>26/04/2025</td>
+                                    <td>Amelia Walker</td>
+                                    <td>Active</td>
+                                    <td>Darlene Robertson</td>
+                                    <td>28/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10013</a></td>
+                                    <td>27/04/2025</td>
+                                    <td>James Hall</td>
+                                    <td>Inactive</td>
+                                    <td>Bessie Cooper</td>
+                                    <td>29/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10014</a></td>
+                                    <td>28/04/2025</td>
+                                    <td>Isabella Allen</td>
+                                    <td>Active</td>
+                                    <td>Jenny Wilson</td>
+                                    <td>30/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10015</a></td>
+                                    <td>29/04/2025</td>
+                                    <td>David Young</td>
+                                    <td>Inactive</td>
+                                    <td>Bessie Cooper</td>
+                                    <td>01/05/2025</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="ptw-link">10016</a></td>
+                                    <td>30/04/2025</td>
+                                    <td>Mia Hernandez</td>
+                                    <td>Active</td>
+                                    <td>Jenny Wilson</td>
+                                    <td>02/05/2025</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn btn-primary py-2 px-3">Create Request</button>
+                        <button class="btn btn-primary py-2 px-3">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        <script>
+            $(function () {
+                const dt = $('#ptwTable').DataTable({
+                    ordering: true,
+                    order: [], // no initial sort
+                    orderMulti: false,
+                    paging: true,
+                    pageLength: 8,
+                    lengthChange: false, // hide length dropdown to match screenshot
+                    searching: true, // we’ll bind our custom input
+                    info: false,
+                    // make dates sort properly (DD/MM/YYYY)
+                    columnDefs: [{
+                            targets: [1, 5],
+                            type: 'date-eu'
+                        } // DataTables recognizes date-eu format
+                    ]
+                });
+
+                // custom keyword search
+                $('#keywordInput').on('keyup change', function () {
+                    dt.search(this.value).draw();
+                });
+
+                // radio filters -> map to Status column
+                $('input[name="statusFilter"]').on('change', function () {
+                    const val = this.value; // "Active" or "Inactive"
+                    dt.column(3).search(val).draw();
+                }).trigger('change'); // apply initial filter
+
+                // refresh (clear filters/search)
+                $('#refreshBtn').on('click', function () {
+                    $('#keywordInput').val('');
+                    $('input[name="statusFilter"][value="Active"]').prop('checked', true);
+                    dt.search('').columns().search('').draw();
+                    dt.column(3).search('Active').draw();
+                });
+
+                // download CSV (simple client-side export)
+                $('#downloadBtn').on('click', function () {
+                    const rows = dt.rows({
+                        search: 'applied'
+                    }).data().toArray();
+                    const header = ['PTW Reference No', 'Requested Date', 'Requested By', 'Status',
+                        'Last Action By', 'Last Action Date'
+                    ];
+                    const csv = [header].concat(rows).map(r => r.map(x =>
+                        `"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
+                    const blob = new Blob([csv], {
+                        type: 'text/csv;charset=utf-8;'
+                    });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = 'ptw-requests.csv';
+                    a.click();
+                });
+            });
+        </script>
+        <script>
+            function loadJS(u) {
+                var r = document.getElementsByTagName("script")[0],
+                    s = document.createElement("script");
+                s.src = u;
+                r.parentNode.insertBefore(s, r);
+            }
+        </script>
+    </footer>
+
+    <!-- pagescript here... -->
+    <script></script>
+    <!-- End pagescript here... -->
+</body>
+
+</html>

@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <title>Ad airport</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container-fluid h-100 d-flex align-items-center px-0">
+            <div class="logo col-auto ps-3 pe-3 ps-lg-3 pe-lg-3 d-flex align-items-center">
+                <a href="#">
+                    <img src="assets/images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="header-right col d-grid align-items-center">
+                <nav class="main-nav ps-lg-4">
+                    <ul class="d-xl-flex m-0 p-0 list-unstyled">
+                        <li class=""><a class="active" href="">Home</a></li>
+                        <li class=""><a href="">Settings</a></li>
+                        <li><a href="">Help</a></li>
+                        <li class="ms-auto">
+                            <a href="#" class="user-card d-flex py-3 py-xl-0 justify-content-end">
+                                <div class="user-info col-auto d-flex align-items-center me-2">
+                                    <div>
+                                        <span class="user-name fs-6 text-lg-white w-100 d-block mx-0 my-1 lh-1">Likitha
+                                            Komati</span>
+                                        <span
+                                            class="user-status fs-6 text-lg-white text-end w-100 d-block mx-0 my-1 lh-1">To
+                                            DO</span>
+                                    </div>
+                                </div>
+                                <div class="user-avatar col-auto">
+                                    <img src="assets/images/user-image.png" alt="user avatar">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="dark">
+                    <h6 class="text-white ps-3 ps-lg-5 mb-0 mt-auto py-2">Dashboard</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="mob-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="overlay"></div>
+    </header>
+    <main class="home-page">
+        <section class="pt-5">
+            <div class="container-fluid">
+                <!-- Tabs -->
+                <ul class="nav nav-tabs mb-3" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-details" type="button"
+                            role="tab">Details</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-highrisk" type="button"
+                            role="tab">High‑Risk Activities</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-mandatory" type="button"
+                            role="tab">Mandatory Requirements</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- DETAILS TAB -->
+                    <div class="tab-pane fade show active" id="tab-details" role="tabpanel">
+                        <div class="p-4 rounded-3 bg-light">
+                            <!-- Permit validity -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Permit to work validity <span
+                                        class="text-danger">*</span></label>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ptw_validity" id="valid1"
+                                            checked>
+                                        <label class="form-check-label" for="valid1">1 Month</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ptw_validity" id="valid2">
+                                        <label class="form-check-label" for="valid2">2 Months</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ptw_validity" id="valid3">
+                                        <label class="form-check-label" for="valid3">6 Months</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Work timings -->
+                            <div class="mb-4">
+                                <p class="fw-semibold mb-2">Work Timings</p>
+                                <div class="row g-3">
+                                    <div class="col-lg-6">
+                                        <label for="startTime" class="form-label">Start Time <span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <select id="startTime" class="form-select">
+                                                <option selected>07:00 AM</option>
+                                                <option>08:00 AM</option>
+                                                <option>09:00 AM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="endTime" class="form-label">End Time <span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <select id="endTime" class="form-select">
+                                                <option>05:00 PM</option>
+                                                <option selected>18:00 PM</option>
+                                                <option>19:00 PM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Type of activities -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Type of activities <span
+                                        class="text-danger">*</span></label>
+                                <div class="row g-3">
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act1" checked>
+                                            <label class="form-check-label" for="act1">Maintenance Preventive /
+                                                Corrective</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act2">
+                                            <label class="form-check-label" for="act2">Cause and Effect</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act3">
+                                            <label class="form-check-label" for="act3">Cleaning / Waste Removal</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act4">
+                                            <label class="form-check-label" for="act4">Construction &amp;
+                                                Refurbishment</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act5">
+                                            <label class="form-check-label" for="act5">Fit Outs / Modifications</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act6">
+                                            <label class="form-check-label" for="act6">Inspection / Survey</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act7">
+                                            <label class="form-check-label" for="act7">Testing &amp;
+                                                Commissioning</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scope of Works -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Scope of Works <span
+                                        class="text-danger">*</span></label>
+                                <div class="row g-3 align-items-start">
+                                    <div class="col-lg-7">
+                                        <label for="scopeDetails" class="form-label">Details <span
+                                                class="text-danger">*</span></label>
+                                        <textarea id="scopeDetails" class="form-control" rows="5"
+                                            placeholder="Type details here..."></textarea>
+                                    </div>
+                                    <!-- Upload 1 -->
+                                    <div class="col-lg-5">
+                                        <label for="fileA" class="form-label">Upload File</label>
+                                        <div class="file-group">
+                                            <input id="fileA" type="file" class="d-none file-input">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control file-name"
+                                                    placeholder="Attach File" readonly>
+                                                <button type="button" class="btn btn-primary rounded-0 file-trigger">
+                                                    <!-- paperclip icon -->
+                                                    Attach File
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <hr>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <label for="scopeDetails" class="form-label">Brief Description of Works to be
+                                            Completed <span class="text-danger">*</span></label>
+                                        <textarea id="scopeDetails" class="form-control" rows="5"
+                                            placeholder="Type details here..."></textarea>
+                                    </div>
+                                    <!-- Upload 2 -->
+                                    <div class="col-lg-5">
+                                        <label for="fileB" class="form-label">Upload File</label>
+                                        <div class="file-group">
+                                            <input id="fileB" type="file" class="d-none file-input">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control file-name"
+                                                    placeholder="Attach File" readonly>
+                                                <button type="button" class="btn btn-primary rounded-0 file-trigger">
+                                                    Attach File
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div class="actions py-4 text-center">
+                            <button class="btn btn-primary py-3 px-4">Save as Draft</button>
+                            <button class="btn btn-primary py-3 px-4">Next</button>
+                            <button class="btn btn-primary py-3 px-4">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Empty placeholders for other tabs -->
+                    <div class="tab-pane fade" id="tab-highrisk" role="tabpanel">
+                        <!-- ====== PTW Questions ====== -->
+                        <div class="ptw-questions" role="group" aria-label="Permit to Work Questions">
+                            <div class="ptw-grid row">
+
+                                <!-- 1 -->
+                                <fieldset class="q-card col-md-6 col-12">
+                                    <legend class="q-title">
+                                        If Airport System Isolation/Interruption(s) required <span class="req">*</span>
+                                    </legend>
+                                    <p class="q-hint">
+                                        (If Yes, the Required Documents Specified in the Mandatory Requirements Shall be
+                                        Submitted for PTW Processing)
+                                    </p>
+                                    <div class="q-options">
+                                        <label class="radio">
+                                            <input type="radio" name="airport_isolation" id="airport_isolation_yes"
+                                                value="yes">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">Yes</span>
+                                        </label>
+
+                                        <label class="radio">
+                                            <input type="radio" name="airport_isolation" id="airport_isolation_no"
+                                                value="no">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <!-- 2 -->
+                                <fieldset class="q-card col-md-6 col-12">
+                                    <legend class="q-title">
+                                        If Lifting Equipment(s) required <span class="req">*</span>
+                                    </legend>
+                                    <p class="q-hint">
+                                        (If Yes, the Required Documents Specified in the Mandatory Requirements Shall be
+                                        Submitted for PTW Processing)
+                                    </p>
+                                    <div class="q-options">
+                                        <label class="radio">
+                                            <input type="radio" name="lifting_equip" id="lifting_equip_yes" value="yes">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">Yes</span>
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="lifting_equip" id="lifting_equip_no" value="no">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <!-- 3 -->
+                                <fieldset class="q-card col-md-6 col-12">
+                                    <legend class="q-title">
+                                        If Excavation(s) required <span class="req">*</span>
+                                    </legend>
+                                    <p class="q-hint">
+                                        (If Yes, the Required Documents Specified in the Mandatory Requirements Shall be
+                                        Submitted for PTW Processing)
+                                    </p>
+                                    <div class="q-options">
+                                        <label class="radio">
+                                            <input type="radio" name="excavation" id="excavation_yes" value="yes">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">Yes</span>
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="excavation" id="excavation_no" value="no">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <!-- 4 -->
+                                <fieldset class="q-card col-md-6 col-12">
+                                    <legend class="q-title">
+                                        If Hot Work(s) required <span class="req">*</span>
+                                    </legend>
+                                    <p class="q-hint">
+                                        (If Yes, the Required Documents Specified in the Mandatory Requirements Shall be
+                                        Submitted for PTW Processing)
+                                    </p>
+                                    <div class="q-options">
+                                        <label class="radio">
+                                            <input type="radio" name="hot_work" id="hot_work_yes" value="yes">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">Yes</span>
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="hot_work" id="hot_work_no" value="no">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <!-- 5 -->
+                                <fieldset class="q-card col-md-6 col-12">
+                                    <legend class="q-title">
+                                        If Working at Height(s) required <span class="req">*</span>
+                                    </legend>
+                                    <p class="q-hint">
+                                        (If Yes, the Required Documents Specified in the Mandatory Requirements Shall be
+                                        Submitted for PTW Processing)
+                                    </p>
+                                    <div class="q-options">
+                                        <label class="radio">
+                                            <input type="radio" name="work_at_height" id="work_at_height_yes"
+                                                value="yes">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">Yes</span>
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="work_at_height" id="work_at_height_no" value="no">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <!-- 6 -->
+                                <fieldset class="q-card col-md-6 col-12">
+                                    <legend class="q-title">
+                                        If Confined Space Entry(s) required <span class="req">*</span>
+                                    </legend>
+                                    <p class="q-hint">
+                                        (If Yes, the Required Documents Specified in the Mandatory Requirements Shall be
+                                        Submitted for PTW Processing)
+                                    </p>
+                                    <div class="q-options">
+                                        <label class="radio">
+                                            <input type="radio" name="confined_space" id="confined_space_yes"
+                                                value="yes">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">Yes</span>
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="confined_space" id="confined_space_no" value="no">
+                                            <span class="radio__box" aria-hidden="true"></span>
+                                            <span class="radio__label">No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div class="actions py-4 text-center">
+                            <button class="btn btn-primary py-3 px-4">Save as Draft</button>
+                            <button class="btn btn-primary py-3 px-4">Next</button>
+                            <button class="btn btn-primary py-3 px-4">Cancel</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-mandatory" role="tabpanel">
+                        <div class="alert alert-info d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-exclamation-triangle me-2"></i> Please fill out all essential details
+                                before submitting the pack for PTW Review</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                        <div class="custom-accordion accordion" id="ptwAccordion">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne">
+                                        Detailed Method Statement<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <div class="container-fluid pt-3 pb-4">
+                                            <form class="ptw-form">
+                                                <div class="row g-4 align-items-start">
+
+                                                    <!-- Method Description -->
+                                                    <div class="col-12 col-lg-4">
+                                                        <label class="form-label mb-1">Method Description</label>
+                                                        <input type="text" class="form-control ptw-control"
+                                                            placeholder="Text">
+                                                    </div>
+
+                                                    <!-- Details of Equipment Tools -->
+                                                    <div class="col-12 col-lg-4">
+                                                        <label class="form-label mb-1">Details of Equipment Tools <span
+                                                                class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control ptw-control"
+                                                            placeholder="Text" required>
+                                                    </div>
+
+                                                    <!-- Upload File -->
+                                                    <div class="col-12 col-lg-4">
+                                                        <label class="form-label mb-1">Upload File <span
+                                                                class="text-danger">*</span></label>
+
+                                                        <!-- Input group with right-side button -->
+                                                        <div class="input-group ptw-input-group">
+                                                            <input id="uploadText" type="text"
+                                                                class="form-control ptw-control"
+                                                                placeholder="Attach File" readonly>
+                                                            <button
+                                                                class="btn btn-attach btn-primary d-flex align-items-center gap-2"
+                                                                type="button" id="attachBtn">
+                                                                <i class="bi bi-paperclip"></i> Attach File
+                                                            </button>
+                                                            <input id="uploadFiles" type="file" class="d-none" multiple>
+                                                        </div>
+
+                                                        <!-- File list -->
+                                                        <ul class="list-unstyled mt-3 mb-0" id="fileList">
+                                                            <!-- Example static items (can be removed) -->
+                                                            <!-- <li class="d-flex align-items-center justify-content-between py-1">
+                                                                 <a href="#" class="ptw-file">file_name.pdf</a>
+                                                                 <button type="button" class="btn btn-link p-0 text-primary ptw-del" aria-label="Delete"><i class="bi bi-trash"></i></button>
+          </li>
+          -->
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo">
+                                        Site Specific Health &amp; Safety Risk Assessment<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">Content...</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree">
+                                        Building Change Request<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">Content...</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour">
+                                        Work Schedule<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">Content...</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive">
+                                        Emergency Notification Procedure<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">Content...</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSix">
+                                        Certificate<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">Content...</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSeven">
+                                        Work Safety Plan (Mandatory document for Airside)
+                                    </button>
+                                </h2>
+                                <div id="collapseSeven" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">Content...</div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseEight">
+                                        Staff Airside Safety induction (Mandatory document for Airside)
+                                    </button>
+                                </h2>
+                                <div id="collapseEight" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">Content...</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        <script>
+            $(function () {
+                // destroy if already initialized (safe re-run)
+                if ($.fn.DataTable.isDataTable('#usersTable')) {
+                    $('#usersTable').DataTable().destroy();
+                }
+
+                $('#usersTable').DataTable({
+                    ordering: true,
+                    order: [],
+                    orderMulti: false,
+                    searching: false,
+                    paging: true, // ✅ enable pagination
+                    pageLength: 10, // rows per page
+                    lengthMenu: [
+                        [5, 10, 25, 50, -1],
+                        [5, 10, 25, 50, 'All']
+                    ],
+                    pagingType: 'simple_numbers', // « 1 2 3 »
+                    info: true // "Showing X to Y of Z"
+                });
+            });
+        </script>
+        <script>
+            function loadJS(u) {
+                var r = document.getElementsByTagName("script")[0],
+                    s = document.createElement("script");
+                s.src = u;
+                r.parentNode.insertBefore(s, r);
+            }
+        </script>
+        <script>
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+                new bootstrap.Tooltip(el);
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                flatpickr('#liabilityExpiryWrap', {
+                    wrap: true, // enables the button to toggle
+                    dateFormat: 'd/m/Y', // DD/MM/YYYY
+                    allowInput: true, // let users type as well
+                    // disableMobile: true // uncomment for a consistent picker on mobile
+                });
+            });
+        </script>
+        <script>
+            // Run after DOM is ready
+            document.addEventListener('DOMContentLoaded', () => {
+                // Open the file picker (event delegation)
+                document.addEventListener('click', (e) => {
+                    const trigger = e.target.closest('.file-trigger');
+                    if (!trigger) return;
+                    const group = trigger.closest('.file-group');
+                    group.querySelector('.file-input').click();
+                });
+
+                // Show chosen filename
+                document.addEventListener('change', (e) => {
+                    if (!e.target.matches('.file-input')) return;
+                    const group = e.target.closest('.file-group');
+                    const out = group.querySelector('.file-name');
+                    out.value = e.target.files && e.target.files[0] ? e.target.files[0].name : '';
+                });
+            });
+        </script>
+
+        <script>
+            (function () {
+                const acc = document.getElementById('ptwAccordion');
+                const triggers = acc.querySelectorAll('.doc-item__trigger');
+
+                // Optional: open first item on load
+                // open(triggers[0]);
+
+                triggers.forEach(btn => {
+                    btn.addEventListener('click', () => toggle(btn, true));
+                    btn.addEventListener('keydown', onKeyNav);
+                });
+
+                function toggle(btn, closeOthers = false) {
+                    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+                    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+                    if (closeOthers) {
+                        triggers.forEach(other => {
+                            if (other !== btn) close(other);
+                        });
+                    }
+                    isOpen ? close(btn) : open(btn);
+                }
+
+                function open(btn) {
+                    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+                    btn.setAttribute('aria-expanded', 'true');
+                    panel.hidden = false;
+                    // let CSS handle the animation via class
+                    requestAnimationFrame(() => panel.classList.add('is-open'));
+                }
+
+                function close(btn) {
+                    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+                    btn.setAttribute('aria-expanded', 'false');
+                    panel.classList.remove('is-open');
+                    // wait for transition to end before setting hidden
+                    panel.addEventListener('transitionend', function onEnd(e) {
+                        if (e.propertyName === 'grid-template-rows') {
+                            panel.hidden = true;
+                            panel.removeEventListener('transitionend', onEnd);
+                        }
+                    });
+                }
+
+                // Keyboard navigation (Up/Down/Home/End)
+                function onKeyNav(e) {
+                    const keys = ['ArrowUp', 'ArrowDown', 'Home', 'End'];
+                    if (!keys.includes(e.key)) return;
+
+                    e.preventDefault();
+                    const items = Array.from(triggers);
+                    const i = items.indexOf(e.currentTarget);
+
+                    let next;
+                    if (e.key === 'ArrowUp') next = i > 0 ? items[i - 1] : items[items.length - 1];
+                    if (e.key === 'ArrowDown') next = i < items.length - 1 ? items[i + 1] : items[0];
+                    if (e.key === 'Home') next = items[0];
+                    if (e.key === 'End') next = items[items.length - 1];
+                    next && next.focus();
+                }
+            })();
+        </script>
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const attachBtn = document.getElementById("attachBtn");
+    const uploadInput = document.getElementById("uploadFiles");
+    const uploadText = document.getElementById("uploadText");
+    const fileList = document.getElementById("fileList");
+
+    // Open file dialog when clicking "Attach File" button
+    attachBtn.addEventListener("click", () => {
+        uploadInput.click();
+    });
+
+    // When files are selected
+    uploadInput.addEventListener("change", () => {
+        fileList.innerHTML = ""; // Clear old list
+
+        if (uploadInput.files.length > 0) {
+            // Show first file name in text box
+            uploadText.value = uploadInput.files[0].name;
+
+            // Loop through files and display them in the list
+            Array.from(uploadInput.files).forEach((file) => {
+                const li = document.createElement("li");
+                li.className = "d-flex align-items-center justify-content-between py-1";
+
+                // File link
+                const a = document.createElement("a");
+                a.href = "#";
+                a.className = "ptw-file";
+                a.textContent = file.name;
+
+                // Delete button
+                const delBtn = document.createElement("button");
+                delBtn.type = "button";
+                delBtn.className = "btn btn-link p-0 text-primary ptw-del";
+                delBtn.innerHTML = '<i class="bi bi-trash"></i>';
+                delBtn.addEventListener("click", () => {
+                    li.remove();
+                    if (fileList.children.length === 0) {
+                        uploadText.value = "";
+                        uploadInput.value = "";
+                    }
+                });
+
+                li.appendChild(a);
+                li.appendChild(delBtn);
+                fileList.appendChild(li);
+            });
+        } else {
+            uploadText.value = "";
+        }
+    });
+});
+</script>
+
+    </footer>
+
+    <!-- pagescript here... -->
+    <script></script>
+    <!-- End pagescript here... -->
+</body>
+
+</html>

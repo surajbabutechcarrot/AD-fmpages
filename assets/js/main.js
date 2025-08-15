@@ -1,41 +1,28 @@
-document.body.innerHTML += "<a href='#' id='back-to-top' title=''></a>";
-const getBTTElm = document.getElementById('back-to-top');
-document.addEventListener('scroll', ev => {
-    if (window.scrollY > 150) {
-        getBTTElm.classList.add('visible');
-    } else {
-        getBTTElm.classList.remove('visible');
-    }
-});
-getBTTElm.addEventListener('click', e => {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-})
+
 
 
 $(document).ready(function () {
     $('#sidebarToggle').click(function (e) {
         e.stopPropagation(); // Prevent click from bubbling up
         $('#sidebar').toggleClass('show');
+        $(this).toggleClass('open', $('#sidebar').hasClass('show')); // Add/remove 'open'
     });
 
     // Close sidebar when clicking outside
     $(document).click(function (event) {
         if (!$(event.target).closest("#sidebar, #sidebarToggle").length) {
             $("#sidebar").removeClass("show");
+            $("#sidebarToggle").removeClass("open"); // Remove open state
         }
     });
 });
 
 
 
+
 // menu function
 
 const getBtn = document.querySelector('.mob-btn');
-console.log(getBtn);
 getBtn.addEventListener('click', e => {
     document.querySelector('body').classList.toggle('show-menu');
 })
@@ -65,43 +52,4 @@ getDropDownClick.forEach((item) => {
 
 
 
-//animation
-// just "anim" in your element
-window.addEventListener("load", () => {
-    function isInViewport(el, gap) {
-        let top = el.offsetTop;
-        let left = el.offsetLeft;
-        let height = el.offsetHeight;
-        console.log(el.offsetParent);
-        while (el.offsetParent) {
-            el = el.offsetParent;
-            top += el.offsetTop;
-            left += el.offsetLeft;
-        }
-        return (
-            (window.pageYOffset + window.innerHeight - gap) >= (top) &&
-            (window.pageYOffset) <= (height + top)
-        );
-    }
-    let getElem = document.querySelectorAll('.anim');
-    //please change as per the design
-    const breakPoints = {
-        desktop: 250,
-        laptop: 80,
-        tab: 50,
-        mobile: 30
-    };
-    let targetGap;
-    window.innerWidth >= 1200 ? targetGap = breakPoints.desktop :
-        window.innerWidth >= 1024 ? targetGap = breakPoints.laptop :
-        window.innerWidth >= 768 ? targetGap = breakPoints.tab :
-        targetGap = breakPoints.mobile;
 
-    function anim() {
-        getElem.forEach(element => {
-            isInViewport(element, targetGap) ? element.classList.add("visible") : null;
-        })
-    }
-    getElem.length > 0 ? (window.addEventListener('scroll', anim, false)) : null;
-    getElem.length > 0 ? anim() : null;
-}, false);

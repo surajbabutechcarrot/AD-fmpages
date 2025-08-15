@@ -3,8 +3,9 @@
 // deafult Color
 $primary-color : #110C71!default; // green
 $secondary-color : #41B6F7 !default; // red
-$quinary-color : #272727 !default; // Grey
+$quinary-color : #3F73AB !default; // Grey
 $sky-blue: #0392B4 !default; // Sky Blue
+
 // Custom-color
 $dark-bg : #20222E !default;
 $dark-gray : #323241 !default;
@@ -134,4 +135,53 @@ $filter-z:99;
   .fw-900{
     font-weight: 900;
   }
-  
+  .btn-icon{
+    transition: all  0.3s;
+    &:hover{
+      background: $primary-color!important;
+      svg{
+        path{
+          fill: $white!important;
+        }
+      }
+    }
+  }
+  .btn{
+    &.btn-primary{
+      max-height: size(50);
+      display: flex;
+      align-items: center;
+      font-weight: 400!important;
+      justify-content: center;
+    }
+  }
+  .bg-img{
+    background: url('../images/ad-section-bg.png') no-repeat center center fixed;
+  }
+  .form-control, .form-select{
+    border-radius: 0;
+    padding-top: size(10);
+    padding-bottom: size(10);
+    border-color: rgba(0, 24, 113, 1);
+    max-height: size(40);
+    font-size: size(13);
+    &::placeholder{
+      color: $black;
+    }
+  }
+  textarea{
+    &.form-control{
+      max-height: size(119)!important; min-height: size(119)!important;
+    }
+  }
+  label, button{
+    &.btn-primary{
+      &:hover{
+        svg{
+          path, rect{
+            stroke: $black!important;
+          }
+        }
+      }
+    }
+  }
