@@ -185,3 +185,22 @@ $filter-z:99;
       }
     }
   }
+  /* keep the list tight and aligned with your design */
+#fileList .ptw-file { text-decoration: none; }
+#fileList .ptw-del  { line-height: 1; }
+.btn-secondary{
+  background: rgba(3, 146, 180, 1);
+  max-height: size(50);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flatpickr-day.selected{
+  background: $primary-color!important;
+}
+ol {
+  li{
+    list-style-position: outside;
+  }
+}

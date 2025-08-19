@@ -228,7 +228,7 @@ $base-size: 16;
   }
 // Clearfix
 @mixin clearfix {
-    *zoom: 1;
+    // *zoom: 1;
   
     &:after,
     &:before {

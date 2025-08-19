@@ -382,12 +382,17 @@ $radius:     .75rem;
     background: $panel-bg;
     color: $brand-blue;
     font-weight: 700;
-    padding: 1rem 1.25rem 1rem 3.25rem; // room for circle icon
+    padding: 27px 1.25rem 27px 3.25rem; // room for circle icon
     box-shadow: none;
-
+    border: 1px solid #E7E7E7;
+    border-bottom: none;
+    border-radius: 0!important;
     // hide default chevron
     &::after { display: none; }
-
+    &.collapsed {
+      background: #fff;
+      border-bottom: 1px solid #E7E7E7;
+    }
     // Circle + / – icon (pure CSS fallback, works even without inner span)
     position: relative;
     &::before {
@@ -429,6 +434,8 @@ $radius:     .75rem;
     padding: 1.25rem;
     margin-top: -.5rem;
     border-radius: 0!important;
+     border: 1px solid #E7E7E7;
+     border-top: none;
   }
 
   // Labels & required star
