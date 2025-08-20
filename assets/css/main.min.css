@@ -12082,6 +12082,101 @@ ol li {
   list-style-position: outside;
 }
 
+/* Transaction History modal (no variables) */
+#historyModal .modal-dialog {
+  max-width: 1100px;
+}
+#historyModal .modal-content {
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(10, 26, 113, 0.12);
+  overflow: hidden;
+}
+#historyModal .modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e9edf5;
+}
+#historyModal .modal-header .modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #222;
+}
+#historyModal .modal-header .btn-close {
+  opacity: 0.7;
+}
+#historyModal .modal-header .btn-close:hover {
+  opacity: 1;
+}
+#historyModal .modal-body {
+  padding: 1.25rem 1.5rem;
+}
+#historyModal .modal-footer {
+  border-top: 1px solid #e9edf5;
+  padding: 1.25rem 1.5rem;
+  justify-content: center;
+}
+#historyModal .transaction-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+#historyModal .transaction-table thead th {
+  background: #0a1a71;
+  color: #fff;
+  font-weight: 600;
+  border: 0;
+  padding: 0.9rem 1rem;
+  white-space: nowrap;
+}
+#historyModal .transaction-table thead th:first-child {
+  border-top-left-radius: 0.5rem;
+}
+#historyModal .transaction-table thead th:last-child {
+  border-top-right-radius: 0.5rem;
+}
+#historyModal .transaction-table thead th .sort {
+  margin-left: 0.35rem;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+#historyModal .transaction-table tr td {
+  margin: 4px 0;
+  border-top: 1px solid rgba(17, 12, 113, 0.1);
+  border-bottom: 1px solid rgba(17, 12, 113, 0.1);
+  background: #f1f4f9;
+}
+#historyModal .transaction-table tbody tr:nth-child(even) {
+  background: #f3f6ff;
+}
+#historyModal .transaction-table tbody td {
+  padding: 0.95rem 1rem;
+  vertical-align: middle;
+  border-top: 0;
+  border-bottom: 1px solid #e9edf5;
+}
+#historyModal .transaction-table tbody td:first-child {
+  text-align: center;
+  width: 110px;
+}
+#historyModal .transaction-table tbody td:nth-child(3) {
+  width: 180px;
+}
+#historyModal .transaction-table tbody td:nth-child(4) {
+  width: 200px;
+}
+#historyModal .transaction-table tbody td:nth-child(5) {
+  width: 220px;
+}
+@media (max-width: 767.98px) {
+  #historyModal .transaction-table thead th {
+    white-space: nowrap;
+  }
+  #historyModal .transaction-table tbody td {
+    width: auto !important;
+  }
+}
+
 /*  ===============
   1. Reset
 ===============  */
