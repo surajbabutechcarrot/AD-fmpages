@@ -46,6 +46,15 @@ $spacing: 50px !default; // 50px.
 $header-z:999;
 $filter-z:99;
 
+::-moz-selection { /* Code for Firefox */
+  color: $white;
+  background: $primary-color;
+}
+
+::selection {
+  color: $white;
+  background: $primary-color;
+}
 
 .d-flx {
     @include flexbox();
@@ -290,3 +299,63 @@ ol {
     }
   }
 }
+
+.panel {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.form-control.bg-light {
+  background: #f2f2f2 !important;
+}
+
+.remarks {
+  border: 2px solid #13206f;
+  border-radius: 0.25rem;
+}
+
+.upload-block {
+  background: #f7f7f8;
+  border: 1px dashed #d4d6dc;
+  border-radius: 0.5rem;
+
+  .file-row {
+    gap: 0.5rem;
+    align-items: center;
+    font-weight: 500;
+
+    .file-icon {
+      width: 20px;
+      height: 24px;
+      flex: 0 0 20px;
+    }
+  }
+}
+
+.req {
+  color: #dc3545;
+}
+
+
+/* quick styles to match the screenshot */
+  .ptw-card {  border-radius:.75rem; background:#fff; }
+  .ptw-section { border:1px solid #e5e7eb; border-radius:.5rem; background:#f7f7f9; }
+  .ptw-label { font-weight:600; }
+  .ptw-muted { background:#f3f4f6; border:1px solid #e5e7eb; color:#111; font-weight:600; letter-spacing:.15em; }
+  .ptw-btn-primary { background:#0f1d6b; border-color:#0f1d6b; }
+  .ptw-btn-primary:hover { background:#0d195c; border-color:#0d195c; }
+  .ptw-file-wrap { display:flex; gap:.75rem; }
+  .ptw-file-wrap .form-control { flex:1 1 auto; }
+  .ptw-file-btn { min-width:140px; display:inline-flex; align-items:center; justify-content:center; gap:.5rem; }
+  .ptw-info { position:relative; padding-left:1rem; }
+  .ptw-info::before{ content:""; position:absolute; left:0; top:50%; transform:translateY(-50%); width:.5rem; height:.5rem; border-radius:50%; background:#0f1d6b; }
+  .ptw-help { cursor:help; }
+  .ptw-calendar {
+    position: absolute; right:.75rem; top:50%; transform:translateY(-50%);
+    width:1.25rem; height:1.25rem; pointer-events:none; opacity:.9;
+  }
+  .form-check-inline .form-check-input { margin-top:.2rem; }
+  thead, tbody, tfoot, tr, td, th{
+    vertical-align: baseline;
+  }

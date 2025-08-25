@@ -1,0 +1,2487 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <title>Ad airport</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container-fluid h-100 d-flex align-items-center px-0">
+            <div class="logo col-auto ps-3 pe-3 ps-lg-3 pe-lg-3 d-flex align-items-center">
+                <a href="#">
+                    <img src="assets/images/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="header-right col d-grid align-items-center">
+                <nav class="main-nav ps-lg-4">
+                    <ul class="d-xl-flex m-0 p-0 list-unstyled">
+                        <li class=""><a class="active" href="">Home</a></li>
+                        <li class=""><a href="">Settings</a></li>
+                        <li><a href="">Help</a></li>
+                        <li class="ms-auto">
+                            <a href="#" class="user-card d-flex py-3 py-xl-0 justify-content-end">
+                                <div class="user-info col-auto d-flex align-items-center me-2">
+                                    <div>
+                                        <span class="user-name fs-6 text-lg-white w-100 d-block mx-0 my-1 lh-1">Likitha
+                                            Komati</span>
+                                        <span
+                                            class="user-status fs-6 text-lg-white text-end w-100 d-block mx-0 my-1 lh-1">To
+                                            DO</span>
+                                    </div>
+                                </div>
+                                <div class="user-avatar col-auto">
+                                    <img src="assets/images/user-image.png" alt="user avatar">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="dark">
+                    <h6 class="text-white ps-3 ps-lg-5 mb-0 mt-auto py-2">Dashboard</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="mob-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="overlay"></div>
+    </header>
+    <main class="home-page">
+        <section class="pt-5">
+            <div class="container-fluid">
+                <!-- Tabs -->
+                <ul class="nav nav-tabs mb-3" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-details" type="button"
+                            role="tab">Details</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-highrisk" type="button"
+                            role="tab">High‑Risk Activities</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-mandatory" type="button"
+                            role="tab">Mandatory Requirements</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- DETAILS TAB -->
+                    <div class="tab-pane fade show active" id="tab-details" role="tabpanel">
+                        <div class="p-4 rounded-3 bg-light">
+                            <!-- Permit validity -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Permit to work validity <span
+                                        class="text-danger">*</span></label>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ptw_validity" id="valid1"
+                                            checked>
+                                        <label class="form-check-label" for="valid1">1 Month</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ptw_validity" id="valid2">
+                                        <label class="form-check-label" for="valid2">2 Months</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="ptw_validity" id="valid3">
+                                        <label class="form-check-label" for="valid3">6 Months</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Work timings -->
+                            <div class="mb-4">
+                                <p class="fw-semibold mb-2">Work Timings</p>
+                                <div class="row g-3">
+                                    <div class="col-lg-6">
+                                        <label for="startTime" class="form-label">Start Time <span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <select id="startTime" class="form-select">
+                                                <option selected>07:00 AM</option>
+                                                <option>08:00 AM</option>
+                                                <option>09:00 AM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="endTime" class="form-label">End Time <span
+                                                class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <select id="endTime" class="form-select">
+                                                <option>05:00 PM</option>
+                                                <option selected>18:00 PM</option>
+                                                <option>19:00 PM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Type of activities -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Type of activities <span
+                                        class="text-danger">*</span></label>
+                                <div class="row g-3">
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act1" checked>
+                                            <label class="form-check-label" for="act1">Maintenance Preventive /
+                                                Corrective</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act2">
+                                            <label class="form-check-label" for="act2">Cause and Effect</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act3">
+                                            <label class="form-check-label" for="act3">Cleaning / Waste Removal</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act4">
+                                            <label class="form-check-label" for="act4">Construction &amp;
+                                                Refurbishment</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act5">
+                                            <label class="form-check-label" for="act5">Fit Outs / Modifications</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act6">
+                                            <label class="form-check-label" for="act6">Inspection / Survey</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-xl-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="act7">
+                                            <label class="form-check-label" for="act7">Testing &amp;
+                                                Commissioning</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Scope of Works -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Scope of Works <span
+                                        class="text-danger">*</span></label>
+                                <div class="row g-3 align-items-start">
+                                    <div class="col-lg-7">
+                                        <label for="scopeDetails" class="form-label">Details <span
+                                                class="text-danger">*</span></label>
+                                        <textarea id="scopeDetails" class="form-control" rows="5"
+                                            placeholder="Type details here..."></textarea>
+                                    </div>
+                                    <!-- Upload 1 -->
+                                    <div class="col-lg-5">
+                                        <label for="fileA" class="form-label">Upload File</label>
+                                        <div class="file-group">
+                                            <input id="fileA" type="file" class="d-none file-input">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control file-name"
+                                                    placeholder="Attach File" readonly>
+                                                <button type="button" class="btn btn-primary rounded-0 file-trigger">
+                                                    <!-- paperclip icon -->
+                                                    Attach File
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <hr>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <label for="scopeDetails" class="form-label">Brief Description of Works to be
+                                            Completed <span class="text-danger">*</span></label>
+                                        <textarea id="scopeDetails" class="form-control" rows="5"
+                                            placeholder="Type details here..."></textarea>
+                                    </div>
+                                    <!-- Upload 2 -->
+                                    <div class="col-lg-5">
+                                        <label for="fileB" class="form-label">Upload File</label>
+                                        <div class="file-group">
+                                            <input id="fileB" type="file" class="d-none file-input">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control file-name"
+                                                    placeholder="Attach File" readonly>
+                                                <button type="button" class="btn btn-primary rounded-0 file-trigger">
+                                                    Attach File
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Actions -->
+                        <div class="actions py-4 text-center">
+                            <button class="btn btn-primary py-3 px-4">Back to Dashboard</button>
+                            <button class="btn btn-primary py-3 px-4">Save as Draft</button>
+                            <button class="btn btn-primary py-3 px-4">Request clarification</button>
+                            <button class="btn btn-primary py-3 px-4">Close</button>
+                            <button class="btn btn-primary py-3 px-4">Accept</button>
+                        </div>
+                    </div>
+
+                    <!-- Empty placeholders for other tabs -->
+                    <div class="tab-pane fade" id="tab-highrisk" role="tabpanel">
+                        <!-- ====== PTW Questions ====== -->
+                        <div class="ptw-questions" role="group" aria-label="Permit to Work Questions">
+  <div class="ptw-grid row">
+
+    <!-- 1 -->
+    <fieldset class="q-card col-md-6 col-12">
+      <legend class="q-title">If Airport System Isolation/Interruption(s) required <span class="req">*</span></legend>
+      <p class="q-hint">(If Yes, the Required Documents Specified in the Mandatory Requirements Shall be Submitted for PTW Processing)</p>
+      <div class="q-options">
+        <label class="radio">
+          <input type="radio" name="airport_isolation" id="airport_isolation_yes" value="yes" disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">Yes</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="airport_isolation" id="airport_isolation_no" value="no" checked disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">No</span>
+        </label>
+        <!-- hidden to preserve value -->
+        <input type="hidden" name="airport_isolation" value="no">
+      </div>
+    </fieldset>
+
+    <!-- 2 -->
+    <fieldset class="q-card col-md-6 col-12">
+      <legend class="q-title">If Lifting Equipment(s) required <span class="req">*</span></legend>
+      <p class="q-hint">(If Yes, the Required Documents Specified in the Mandatory Requirements Shall be Submitted for PTW Processing)</p>
+      <div class="q-options">
+        <label class="radio">
+          <input type="radio" name="lifting_equip" id="lifting_equip_yes" value="yes" disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">Yes</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="lifting_equip" id="lifting_equip_no" value="no" checked disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">No</span>
+        </label>
+        <input type="hidden" name="lifting_equip" value="no">
+      </div>
+    </fieldset>
+
+    <!-- 3 -->
+    <fieldset class="q-card col-md-6 col-12">
+      <legend class="q-title">If Excavation(s) required <span class="req">*</span></legend>
+      <p class="q-hint">(If Yes, the Required Documents Specified in the Mandatory Requirements Shall be Submitted for PTW Processing)</p>
+      <div class="q-options">
+        <label class="radio">
+          <input type="radio" name="excavation" id="excavation_yes" value="yes" disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">Yes</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="excavation" id="excavation_no" value="no" checked disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">No</span>
+        </label>
+        <input type="hidden" name="excavation" value="no">
+      </div>
+    </fieldset>
+
+    <!-- 4 -->
+    <fieldset class="q-card col-md-6 col-12">
+      <legend class="q-title">If Hot Work(s) required <span class="req">*</span></legend>
+      <p class="q-hint">(If Yes, the Required Documents Specified in the Mandatory Requirements Shall be Submitted for PTW Processing)</p>
+      <div class="q-options">
+        <label class="radio">
+          <input type="radio" name="hot_work" id="hot_work_yes" value="yes" disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">Yes</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="hot_work" id="hot_work_no" value="no" checked disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">No</span>
+        </label>
+        <input type="hidden" name="hot_work" value="no">
+      </div>
+    </fieldset>
+
+    <!-- 5 -->
+    <fieldset class="q-card col-md-6 col-12">
+      <legend class="q-title">If Working at Height(s) required <span class="req">*</span></legend>
+      <p class="q-hint">(If Yes, the Required Documents Specified in the Mandatory Requirements Shall be Submitted for PTW Processing)</p>
+      <div class="q-options">
+        <label class="radio">
+          <input type="radio" name="work_at_height" id="work_at_height_yes" value="yes" disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">Yes</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="work_at_height" id="work_at_height_no" value="no" checked disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">No</span>
+        </label>
+        <input type="hidden" name="work_at_height" value="no">
+      </div>
+    </fieldset>
+
+    <!-- 6 -->
+    <fieldset class="q-card col-md-6 col-12">
+      <legend class="q-title">If Confined Space Entry(s) required <span class="req">*</span></legend>
+      <p class="q-hint">(If Yes, the Required Documents Specified in the Mandatory Requirements Shall be Submitted for PTW Processing)</p>
+      <div class="q-options">
+        <label class="radio">
+          <input type="radio" name="confined_space" id="confined_space_yes" value="yes" disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">Yes</span>
+        </label>
+        <label class="radio">
+          <input type="radio" name="confined_space" id="confined_space_no" value="no" checked disabled>
+          <span class="radio__box" aria-hidden="true"></span><span class="radio__label">No</span>
+        </label>
+        <input type="hidden" name="confined_space" value="no">
+      </div>
+    </fieldset>
+
+  </div>
+</div>
+
+
+
+                        <!-- Actions -->
+                        <div class="mb-3 col-12 px-3">
+                            <label for="remarks" class="form-label fw-semibold">Remarks</label>
+                            <textarea id="remarks" class="form-control bg-light" rows="3"
+                                readonly>remarks will display here</textarea>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-mandatory" role="tabpanel">
+                        <div class="alert alert-info d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-exclamation-triangle me-2"></i> Please fill out all essential details
+                                before submitting the pack for PTW Review</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                        <div class="custom-accordion accordion" id="ptwAccordion">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne">
+                                        Detailed Method Statement<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <div class="container-fluid py-3">
+                                            <div class="row g-4">
+
+                                                <!-- Method Description -->
+                                                <div class="col-12 panel col-lg-8">
+                                                    <div class="row">
+                                                        <div class="col-12 col-lg-6">
+                                                            <div class=" p-3">
+                                                                <label class="form-label fw-semibold mb-2">Method
+                                                                    Description</label>
+                                                                <input type="text" class="form-control bg-light mb-3"
+                                                                    placeholder="Text">
+
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- Details of Equipment Tools -->
+                                                        <div class="col-12 col-lg-6">
+                                                            <div class=" p-3">
+                                                                <label class="form-label fw-semibold mb-2">Details of
+                                                                    Equipment Tools</label>
+                                                                <input type="text" class="form-control bg-light mb-3"
+                                                                    placeholder="Text">
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                                <label class="form-label fw-semibold mb-1">Remarks<span
+                                                                        class="req">*</span></label>
+                                                                <textarea class="form-control remarks" rows="3"
+                                                                    placeholder=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <!-- Upload File -->
+                                                <div class="col-12 col-lg-4">
+                                                    <div class="panel p-3">
+                                                        <div class="fw-semibold mb-3">Upload File</div>
+
+                                                        <!-- File row #1 -->
+                                                        <div class="upload-block p-3 mb-3">
+                                                            <div class="d-flex file-row mb-3">
+                                                                <!-- simple file icon -->
+                                                                <svg class="file-icon" viewBox="0 0 24 24"
+                                                                    fill="#1b3aa5" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 3.5 18.5 8H14V3.5z" />
+                                                                </svg>
+                                                                <span>File.Pdf</span>
+                                                            </div>
+                                                            <label class="form-label fw-semibold mb-1">Remarks<span
+                                                                    class="req">*</span></label>
+                                                            <textarea class="form-control remarks"
+                                                                style="min-height: auto !important;" rows="2"
+                                                                placeholder=""></textarea>
+                                                        </div>
+
+                                                        <!-- File row #2 -->
+                                                        <div class="upload-block p-3">
+                                                            <div class="d-flex file-row mb-3">
+                                                                <svg class="file-icon" viewBox="0 0 24 24"
+                                                                    fill="#1b3aa5" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 3.5 18.5 8H14V3.5z" />
+                                                                </svg>
+                                                                <span>File.Pdf</span>
+                                                            </div>
+                                                            <label class="form-label fw-semibold mb-1">Remarks<span
+                                                                    class="req">*</span></label>
+                                                            <textarea class="form-control remarks"
+                                                                style="min-height: auto !important;" rows="2"
+                                                                placeholder=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <hr>
+                                                </div>
+                                                <div class="actions py-4 mt-0 text-center">
+                                                    <button class="btn btn-primary py-3 px-4">Back To Dashboard</button>
+                                                    <button class="btn btn-primary py-3 px-4">Save As Draft</button>
+                                                    <button class="btn btn-primary py-3 px-4">Request
+                                                        Clarification</button>
+                                                    <button class="btn btn-primary py-3 px-4">Close</button>
+                                                    <button class="btn btn-primary py-3 px-4">Accept</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item border border-danger">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo">
+                                        Site Specific Health &amp; Safety Risk Assessment<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <div class="row g-4 align-items-start">
+                                            <div class="col-4">
+                                                <label class="form-label mb-1">
+                                                    Upload File <span class="text-danger">*</span>
+                                                    <small class="text-muted">(Template Attached)</small>
+                                                    <a href="path/to/your-template.xlsx" download
+                                                        class="ms-1 ptw-link">Download</a>
+                                                </label>
+
+                                                <div class="input-group ptw-input-group">
+                                                    <input id="uploadText2" type="text" class="form-control ptw-control"
+                                                        placeholder="Attach File" readonly>
+                                                    <button
+                                                        class="btn btn-attach btn-primary d-flex align-items-center gap-2"
+                                                        type="button" id="attachBtn2">
+                                                        <i class="bi bi-paperclip"></i> Attach File
+                                                    </button>
+                                                    <input id="uploadFiles2" type="file" class="d-none" multiple>
+                                                </div>
+
+                                                <!-- File list -->
+                                                <ul class="list-unstyled mt-3 mb-0" id="fileList2"></ul>
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                            <div class="actions py-0 text-center">
+                                                <button class="btn btn-secondary py-3 px-4">Cancel</button>
+                                                <button class="btn btn-secondary py-3 px-4">Save as
+                                                    Draft</button>
+                                                <button class="btn btn-secondary py-3 px-4">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree">
+                                        Building Change Request<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <div class="row g-4 align-items-start">
+                                            <div class="col-4">
+                                                <label class="form-label mb-1">
+                                                    Upload File <span class="text-danger">*</span>
+                                                    <small class="text-muted">(Template Attached)</small>
+                                                    <a href="path/to/your-template.xlsx" download
+                                                        class="ms-1 ptw-link">Download</a>
+                                                </label>
+
+                                                <div class="input-group ptw-input-group">
+                                                    <input id="uploadText3" type="text" class="form-control ptw-control"
+                                                        placeholder="Attach File" readonly>
+                                                    <button
+                                                        class="btn btn-attach btn-primary d-flex align-items-center gap-2"
+                                                        type="button" id="attachBtn3">
+                                                        <i class="bi bi-paperclip"></i> Attach File
+                                                    </button>
+                                                    <input id="uploadFiles3" type="file" class="d-none" multiple>
+                                                </div>
+
+                                                <!-- File list -->
+                                                <ul class="list-unstyled mt-3 mb-0" id="fileList3"></ul>
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                            <div class="actions py-0 text-center">
+                                                <button class="btn btn-secondary py-3 px-4">Cancel</button>
+                                                <button class="btn btn-secondary py-3 px-4">Save as
+                                                    Draft</button>
+                                                <button class="btn btn-secondary py-3 px-4">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour">
+                                        Work Schedule<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <div class="row g-4 align-items-start">
+                                            <div class="col-4">
+                                                <label class="form-label mb-1">
+                                                    Upload File <span class="text-danger">*</span>
+                                                    <small class="text-muted">(Template Attached)</small>
+                                                    <a href="path/to/your-template.xlsx" download
+                                                        class="ms-1 ptw-link">Download</a>
+                                                </label>
+
+                                                <div class="input-group ptw-input-group">
+                                                    <input id="uploadText4" type="text" class="form-control ptw-control"
+                                                        placeholder="Attach File" readonly>
+                                                    <button
+                                                        class="btn btn-attach btn-primary d-flex align-items-center gap-2"
+                                                        type="button" id="attachBtn4">
+                                                        <i class="bi bi-paperclip"></i> Attach File
+                                                    </button>
+                                                    <input id="uploadFiles4" type="file" class="d-none" multiple>
+                                                </div>
+
+                                                <!-- File list -->
+                                                <ul class="list-unstyled mt-3 mb-0" id="fileList4"></ul>
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                            <div class="actions py-0 text-center">
+                                                <button class="btn btn-secondary py-3 px-4">Cancel</button>
+                                                <button class="btn btn-secondary py-3 px-4">Save as
+                                                    Draft</button>
+                                                <button class="btn btn-secondary py-3 px-4">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive">
+                                        Emergency Notification Procedure<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Emergency Contact Details - Al Ain Airport -->
+                                        <div class="row g-4 align-items-start">
+                                            <div class="col-12">
+                                                <h6 class="mb-2">Emergency Contact Details - Al Ain Airport</h6>
+                                                <div class="row gy-2">
+                                                    <div class="col-lg-6">
+                                                        <div class="d-flex justify-content-between pe-lg-5">
+                                                            <span class="text-muted">Security Emergency</span>
+                                                            <a class="ptw-link" href="tel:037154500">03 715 4500</a>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between pe-lg-5">
+                                                            <span class="text-muted">Fire Emergency</span>
+                                                            <span>
+                                                                <a class="ptw-link" href="tel:037092900">03 709 2900</a>
+                                                                <span class="text-muted"> / </span>
+                                                                <a class="ptw-link" href="tel:037092042">03 709 2042</a>
+                                                            </span>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between pe-lg-5">
+                                                            <span class="text-muted">Medical Emergency</span>
+                                                            <a class="ptw-link" href="tel:037855800">03 785 5800</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="d-flex justify-content-between pe-lg-5">
+                                                            <span class="text-muted">Airport Duty Manager</span>
+                                                            <a class="ptw-link" href="tel:0501399115">050-139 9115</a>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between pe-lg-5">
+                                                            <span class="text-muted">Airside Operations</span>
+                                                            <a class="ptw-link" href="tel:0566878299">056 687 8299</a>
+                                                        </div>
+                                                        <div class="d-flex justify-content-between pe-lg-5">
+                                                            <span class="text-muted">Sinyar Help Desk</span>
+                                                            <a class="ptw-link" href="tel:028054444">02 805 4444</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <hr class="my-3">
+                                            </div>
+
+                                            <!-- Upload File -->
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <label class="form-label mb-1">Upload File</label>
+                                                        <div class="input-group ptw-input-group">
+                                                            <input id="uploadText3" type="text"
+                                                                class="form-control ptw-control"
+                                                                placeholder="Attach File" readonly>
+                                                            <button
+                                                                class="btn btn-attach btn-primary d-flex align-items-center gap-2"
+                                                                type="button" id="attachBtn3">
+                                                                <i class="bi bi-paperclip"></i> Attach File
+                                                            </button>
+                                                            <input id="uploadFiles3" type="file" class="d-none"
+                                                                multiple>
+                                                        </div>
+                                                        <ul class="list-unstyled mt-3 mb-0" id="fileList3"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Contact form grid -->
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Primary Name<span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Primary Phone Number<span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Primary Email ID<span
+                                                        class="text-danger">*</span></label>
+                                                <input type="email" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Secondary Name<span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Secondary Phone Number<span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Secondary Email ID<span
+                                                        class="text-danger">*</span></label>
+                                                <input type="email" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Tertiary Name</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Tertiary Phone Number</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Tertiary Email ID</label>
+                                                <input type="email" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                            <div class="actions py-0 text-center">
+                                                <button class="btn btn-secondary py-3 px-4">Cancel</button>
+                                                <button class="btn btn-secondary py-3 px-4">Save as
+                                                    Draft</button>
+                                                <button class="btn btn-secondary py-3 px-4">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSix">
+                                        Work Safety Plan (Mandatory document for Airside)<span class="req">*</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Work Safety Plan section -->
+                                        <div class="row g-4">
+
+                                            <!-- Upload File (If Applicable) -->
+                                            <div class="col-12">
+                                                <label class="form-label mb-1">Upload File <small class="text-muted">(If
+                                                        Applicable)</small></label>
+                                                <div class="input-group ptw-input-group">
+                                                    <input type="text" class="form-control ptw-control file-name"
+                                                        placeholder="Attach File" readonly>
+                                                    <button type="button"
+                                                        class="btn btn-attach btn-primary d-flex align-items-center gap-2 file-trigger">
+                                                        <i class="bi bi-paperclip"></i> Attach File
+                                                    </button>
+                                                    <input type="file" class="d-none file-input" multiple>
+                                                </div>
+                                                <ul class="list-unstyled mt-3 mb-0 file-list"></ul>
+                                            </div>
+
+                                            <!-- Row 1 -->
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Work Safety Plan Title</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Scope of Work</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Method of Work</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 2 -->
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Location</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Start Date</label>
+                                                <!-- Start Date -->
+                                                <div id="startDateWrap" class="input-group flatpickr" data-wrap="true">
+                                                    <input type="text" class="form-control ptw-control"
+                                                        placeholder="DD/MM/YYYY" data-input>
+                                                    <button class="btn btn-primary rounded-0" type="button"
+                                                        title="Toggle" data-toggle>
+                                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                            <rect x="3" y="5" width="18" height="16" rx="2"
+                                                                stroke="#fff" stroke-width="2"></rect>
+                                                            <path d="M3 10h18M8 3v4M16 3v4" stroke="#fff"
+                                                                stroke-width="2" stroke-linecap="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">End Date</label>
+                                                <!-- End Date -->
+                                                <div id="endDateWrap" class="input-group flatpickr" data-wrap="true">
+                                                    <input type="text" class="form-control ptw-control"
+                                                        placeholder="DD/MM/YYYY" data-input>
+                                                    <button class="btn btn-primary rounded-0" type="button"
+                                                        title="Toggle" data-toggle>
+                                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                            <rect x="3" y="5" width="18" height="16" rx="2"
+                                                                stroke="#fff" stroke-width="2"></rect>
+                                                            <path d="M3 10h18M8 3v4M16 3v4" stroke="#fff"
+                                                                stroke-width="2" stroke-linecap="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Row 3 -->
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Start Time</label>
+                                                <div class="input-group">
+                                                    <select class="form-select ptw-control">
+                                                        <option selected>1:00 PM</option>
+                                                        <option>1:30 PM</option>
+                                                        <option>2:00 PM</option>
+                                                        <option>2:30 PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">End Time</label>
+                                                <div class="input-group">
+                                                    <select class="form-select ptw-control">
+                                                        <option>1:30 PM</option>
+                                                        <option selected>2:00 PM</option>
+                                                        <option>2:30 PM</option>
+                                                        <option>3:00 PM</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">
+                                                    Equipment <small class="text-muted">(Warning system and construction
+                                                        equipment)</small>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 4 -->
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Clear Statement of the Supervision
+                                                    Structure</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Warning System and Control
+                                                    Measures</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Communication Procedures</label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <!-- Airside Safety Induction -->
+                                        <div class="row g-4 align-items-start">
+                                            <div class="col-12">
+                                                <h6 class="mb-2">Airside Safety Induction</h6>
+                                            </div>
+
+                                            <!-- Yes / No -->
+                                            <div class="col-lg-6 col-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="asi_yes">
+                                                    <label class="form-check-label" for="asi_yes">Yes Attended Airside
+                                                        Safety Induction</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="asi_no">
+                                                    <label class="form-check-label" for="asi_no">No, for
+                                                        Appointment</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Dates / Ref -->
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Date of Induction <span
+                                                        class="text-danger">*</span></label>
+                                                <div id="asiDateWrap" class="input-group flatpickr" data-wrap="true">
+                                                    <input type="text" class="form-control ptw-control"
+                                                        placeholder="DD/MM/YYYY" data-input>
+                                                    <button class="btn btn-primary rounded-0" type="button"
+                                                        title="Toggle" data-toggle>
+                                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                            <rect x="3" y="5" width="18" height="16" rx="2"
+                                                                stroke="#fff" stroke-width="2"></rect>
+                                                            <path d="M3 10h18M8 3v4M16 3v4" stroke="#fff"
+                                                                stroke-width="2" stroke-linecap="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Appointment Date <span
+                                                        class="text-danger">*</span></label>
+                                                <div id="asiApptWrap" class="input-group flatpickr" data-wrap="true">
+                                                    <input type="text" class="form-control ptw-control"
+                                                        placeholder="DD/MM/YYYY" data-input>
+                                                    <button class="btn btn-primary rounded-0" type="button"
+                                                        title="Toggle" data-toggle>
+                                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                                            <rect x="3" y="5" width="18" height="16" rx="2"
+                                                                stroke="#fff" stroke-width="2"></rect>
+                                                            <path d="M3 10h18M8 3v4M16 3v4" stroke="#fff"
+                                                                stroke-width="2" stroke-linecap="round"></path>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Reference No. <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Trainer -->
+                                            <div class="col-lg-4 col-12">
+                                                <label class="form-label mb-1">Trainer <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+
+                                            <!-- Requirements -->
+                                            <div class="col-12">
+                                                <h6 class="mb-2">Requirement for the Operation of Cranes and Other All
+                                                    Structures</h6>
+                                            </div>
+
+                                            <div class="col-lg-6 col-12">
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="req_not_required">
+                                                    <label class="form-check-label" for="req_not_required">Not
+                                                        Required</label>
+                                                </div>
+
+                                                <div class="form-check mb-2">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="req_mobile_crane">
+                                                    <label class="form-check-label" for="req_mobile_crane">Utilization
+                                                        of Mobile / Tower Crane</label>
+                                                </div>
+
+                                                <ul class="ps-4 mb-0">
+                                                    <li>Third-party Certificate for Crane Equipment</li>
+                                                    <li>Third-party Certificate for Crane Lifting Accessories</li>
+                                                    <li>Third-party Certificate for Crane Operators and Riggers</li>
+                                                    <li>Lifting Plan</li>
+                                                    <li>Risk Assessment for Lifting Operation</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-lg-6 col-12">
+                                                <div class="form-check mb-4">
+                                                    <input class="form-check-input" type="checkbox" id="req_required">
+                                                    <label class="form-check-label" for="req_required">
+                                                        Required <small class="text-muted">(Attach the following
+                                                            documents, Valid NOC from ANS Dept. &amp; Clear location for
+                                                            the positioning of the equipment)</small>
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="req_scaffolding">
+                                                    <label class="form-check-label" for="req_scaffolding">Utilization of
+                                                        Scaffolding</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <!-- Operational Arrangements (two-column grid) -->
+                                        <div class="row g-3 align-items-start">
+
+                                            <!-- Row 1 -->
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Arrangements for the Disposal of Waste and Management of Foreign
+                                                    Object Debris
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Site Safety, including Personnel Protection
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 2 -->
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Site Access Routes and Control Measures
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Arrangements in the event of Aerodrome Emergency
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 3 -->
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Arrangements in the event of Low Visibility Operations and Severe
+                                                    Weather Conditions
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Sand / Dust Suppression Measures
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 4 -->
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Excavations
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Storage of Equipment and Material
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 5 -->
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Arrangements for Site Lighting
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Arrangements for the Protection of Critical Infrastructure such as
+                                                    Navigational Aids, Cabling etc.
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 6 -->
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Weather minima that will affect the works
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Arrangements for Vehicle and Equipment (Airfield Driving and Vehicle
+                                                    Permits, Beacons and Radios)
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 7 -->
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Arrangements including Notifications for Closure of Operational
+                                                    Areas
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Arrangements for the Receipt and Movement of Heavy or Bulky Loads
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <!-- Row 8 -->
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Closing and Re-opening of Areas
+                                                    <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <!-- (Optional) Keep the grid balanced -->
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <!-- Hazard Identification, Risk Assessment and Management -->
+                                        <div class="row g-4 align-items-start">
+                                            <div class="col-12">
+                                                <h6 class="mb-0 mt-2">Hazard Identification, Risk Assessment and
+                                                    Management</h6>
+                                            </div>
+
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Hazard and Risk Description <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Risk Category <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Actions to Mitigate Risk to As Low As Reasonably Practicable <span
+                                                        class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+
+                                            <div class="col-lg-6 col-12">
+                                                <label class="form-label mb-1">
+                                                    Risk Category after Mitigation <span class="text-danger">*</span>
+                                                </label>
+                                                <input type="text" class="form-control ptw-control" placeholder="Text">
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                            <div class="actions py-0 text-center">
+                                                <button class="btn btn-secondary py-3 px-4">Cancel</button>
+                                                <button class="btn btn-secondary py-3 px-4">Save as
+                                                    Draft</button>
+                                                <button class="btn btn-secondary py-3 px-4">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSeven">
+                                        Staff Airside Safety induction (Mandatory document for Airside)
+                                    </button>
+                                </h2>
+                                <div id="collapseSeven" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Upload File -->
+                                        <div class="row g-4">
+                                            <div class="col-12 col-lg-4">
+                                                <label class="form-label mb-1">Upload File <span
+                                                        class="text-danger">*</span></label>
+
+                                                <div class="input-group ptw-input-group">
+                                                    <!-- readonly text field -->
+                                                    <input type="text" class="form-control ptw-control file-name"
+                                                        placeholder="Attach File" readonly>
+
+                                                    <!-- attach button -->
+                                                    <button type="button"
+                                                        class="btn btn-attach btn-primary d-flex align-items-center gap-2 file-trigger">
+                                                        <i class="bi bi-paperclip"></i>
+                                                        Attach File
+                                                    </button>
+
+                                                    <!-- hidden file input -->
+                                                    <input type="file" class="d-none file-input" multiple>
+                                                </div>
+
+                                                <!-- optional file list -->
+                                                <ul class="list-unstyled mt-3 mb-0 file-list"></ul>
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                            </div>
+                                            <div class="actions py-0 text-center">
+                                                <button class="btn btn-secondary py-3 px-4">Cancel</button>
+                                                <button class="btn btn-secondary py-3 px-4">Save as
+                                                    Draft</button>
+                                                <button class="btn btn-secondary py-3 px-4">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseEight">
+                                        ANS/OLS NOC (Mandatory for Mechanical/Airlifting activity)
+                                    </button>
+                                </h2>
+                                <div id="collapseEight" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <div class="row g-4 align-items-start">
+                                            <!-- ANS -->
+                                            <div class="col-lg-6 col-12">
+                                                <h6 class="mb-2">ANS</h6>
+                                                <label class="form-label mb-1">Upload File <span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group ptw-input-group">
+                                                    <input type="text" class="form-control ptw-control file-name"
+                                                        placeholder="Attach File" readonly>
+                                                    <button type="button"
+                                                        class="btn btn-attach btn-primary d-flex align-items-center gap-2 file-trigger">
+                                                        <i class="bi bi-paperclip"></i> Attach File
+                                                    </button>
+                                                    <input type="file" class="d-none file-input" multiple>
+                                                </div>
+                                                <ul class="list-unstyled mt-3 mb-0 file-list"></ul>
+                                            </div>
+
+                                            <!-- OLS NOC -->
+                                            <div class="col-lg-6 col-12">
+                                                <h6 class="mb-2">OLS NOC</h6>
+                                                <label class="form-label mb-1">Upload File <span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group ptw-input-group">
+                                                    <input type="text" class="form-control ptw-control file-name"
+                                                        placeholder="Attach File" readonly>
+                                                    <button type="button"
+                                                        class="btn btn-attach btn-primary d-flex align-items-center gap-2 file-trigger">
+                                                        <i class="bi bi-paperclip"></i> Attach File
+                                                    </button>
+                                                    <input type="file" class="d-none file-input" multiple>
+                                                </div>
+                                                <ul class="list-unstyled mt-3 mb-0 file-list"></ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseNine">
+                                        AMC 59
+                                    </button>
+                                </h2>
+                                <div id="collapseNine" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        Content...
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTen">
+                                        AWAC
+                                    </button>
+                                </h2>
+                                <div id="collapseTen" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        Content...
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseEleven" aria-expanded="false"
+                                        aria-controls="collapseEleven">
+                                        Certificate <span class="req">*</span>
+                                    </button>
+                                </h2>
+
+                                <div id="collapseEleven" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body bg-transparent">
+                                        <!-- INNER: sections accordion ONLY (no extra outer wrapper) -->
+                                        <div class="accordion bg-white mt-3" id="certInnerAccordion">
+
+                                            <!-- #1 Mechanical Lifting (expanded) -->
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="mlHeading">
+                                                    <button class="accordion-button" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#mlCollapse"
+                                                        aria-expanded="true" aria-controls="mlCollapse">
+                                                        Requirements for Mechanical Lifting Activity. (Mobile Crane,
+                                                        Spider Crane, Hiab Etc.)
+                                                    </button>
+                                                </h2>
+                                                <div id="mlCollapse" class="accordion-collapse collapse show"
+                                                    aria-labelledby="mlHeading" data-bs-parent="#certInnerAccordion">
+                                                    <div class="accordion-body">
+
+                                                        <!-- Applicable / Not Applicable -->
+                                                        <div class="d-flex align-items-center gap-3 mb-3">
+                                                            <span class="fw-semibold">Applicable</span>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="mlApplicable" id="mlYes" value="yes" checked>
+                                                                <label class="form-check-label"
+                                                                    for="mlYes">Applicable</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="mlApplicable" id="mlNo" value="no">
+                                                                <label class="form-check-label" for="mlNo">Not
+                                                                    Applicable</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 3-column grid -->
+                                                        <div class="row g-3">
+                                                            <!-- Column 1 -->
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Lifting Plan <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="liftPlanText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="liftPlan">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none" id="liftPlan"
+                                                                        data-file-text="liftPlanText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid Operator competency
+                                                                    certificate <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="opCertText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="opCert">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none" id="opCert"
+                                                                        data-file-text="opCertText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Traffic Management
+                                                                    Plan</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="trafficPlanText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="trafficPlan">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none" id="trafficPlan"
+                                                                        data-file-text="trafficPlanText">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Column 2 -->
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid 3rd party inspection
+                                                                    certificate for Mechanical Lifting Equipment <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="thirdPartyEquipText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="thirdPartyEquip">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none"
+                                                                        id="thirdPartyEquip"
+                                                                        data-file-text="thirdPartyEquipText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid Rigger training
+                                                                    certificate <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="riggerCertText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="riggerCert">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none" id="riggerCert"
+                                                                        data-file-text="riggerCertText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid Flagman training
+                                                                    certificate</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="flagmanCertText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="flagmanCert">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none" id="flagmanCert"
+                                                                        data-file-text="flagmanCertText">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Column 3 -->
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid 3rd party inspection
+                                                                    certificate for lifting accessories <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="thirdPartyAccText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="thirdPartyAcc">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none" id="thirdPartyAcc"
+                                                                        data-file-text="thirdPartyAccText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid First Aider certificate
+                                                                    <span class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="firstAiderText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="firstAider">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none" id="firstAider"
+                                                                        data-file-text="firstAiderText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Others</label>
+                                                                <div class="input-group">
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Attach File" readonly
+                                                                        id="othersText">
+                                                                    <button class="btn btn-outline-primary"
+                                                                        type="button" data-file-btn="others">
+                                                                        <i class="bi bi-paperclip me-1"></i>Attach File
+                                                                    </button>
+                                                                    <input type="file" class="d-none" id="others"
+                                                                        data-file-text="othersText">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--/row-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /Mechanical Lifting -->
+
+                                            <!-- #2 MEWP -->
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="mewpHeading">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#mewpCollapse"
+                                                        aria-expanded="false" aria-controls="mewpCollapse">
+                                                        Requirements (MEWP - Boom lift, Scissor lift, Man Lift Etc.)
+                                                    </button>
+                                                </h2>
+                                                <div id="mewpCollapse" class="accordion-collapse collapse"
+                                                    aria-labelledby="mewpHeading" data-bs-parent="#certInnerAccordion">
+                                                    <div class="accordion-body">
+                                                        <!-- add fields here -->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- #3 Scaffolding -->
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="scafHeading">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#scafCollapse"
+                                                        aria-expanded="false" aria-controls="scafCollapse">
+                                                        Requirements for Scaffolding Utilization (Working At Height)
+                                                    </button>
+                                                </h2>
+                                                <div id="scafCollapse" class="accordion-collapse collapse"
+                                                    aria-labelledby="scafHeading" data-bs-parent="#certInnerAccordion">
+                                                    <div class="accordion-body">
+                                                        <div class="mb-3 d-flex align-items-center gap-4">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="scafApplicable" id="scafYes" value="yes"
+                                                                    checked>
+                                                                <label class="form-check-label"
+                                                                    for="scafYes">Applicable</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="scafApplicable" id="scafNo" value="no">
+                                                                <label class="form-check-label" for="scafNo">Not
+                                                                    Applicable</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row g-3">
+                                                            <!-- LEFT COLUMN -->
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid equipment inspection
+                                                                    certificate for Scaffolding <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input id="scafEqInspText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button" data-file-btn="scafEqInspFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="scafEqInspFile" type="file"
+                                                                        class="d-none" data-file-text="scafEqInspText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid scaffold
+                                                                    erector/dismantler training certificates <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input id="scafErectorText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button" data-file-btn="scafErectorFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="scafErectorFile" type="file"
+                                                                        class="d-none" data-file-text="scafErectorText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid scaffold inspector
+                                                                    certificate <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input id="scafInspectorText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button" data-file-btn="scafInspectorFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="scafInspectorFile" type="file"
+                                                                        class="d-none"
+                                                                        data-file-text="scafInspectorText">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- row 2 -->
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Staff “Working at Height”
+                                                                    training certificates <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input id="staffWahText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button" data-file-btn="staffWahFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="staffWahFile" type="file" class="d-none"
+                                                                        data-file-text="staffWahText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Valid inspection certificate
+                                                                    for Safety Harness</label>
+                                                                <div class="input-group">
+                                                                    <input id="harnessInspText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button" data-file-btn="harnessInspFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="harnessInspFile" type="file"
+                                                                        class="d-none" data-file-text="harnessInspText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Location layout marking the
+                                                                    position of scaffolding</label>
+                                                                <div class="input-group">
+                                                                    <input id="locationLayoutText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button"
+                                                                        data-file-btn="locationLayoutFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="locationLayoutFile" type="file"
+                                                                        class="d-none"
+                                                                        data-file-text="locationLayoutText">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- row 3 -->
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Others</label>
+                                                                <div class="input-group">
+                                                                    <input id="scafOthersText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button" data-file-btn="scafOthersFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="scafOthersFile" type="file"
+                                                                        class="d-none" data-file-text="scafOthersText">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- #4 Excavation -->
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="excHeading">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#excCollapse"
+                                                        aria-expanded="false" aria-controls="excCollapse">
+                                                        Requirements for Excavation
+                                                    </button>
+                                                </h2>
+                                                <div id="excCollapse" class="accordion-collapse collapse"
+                                                    aria-labelledby="excHeading" data-bs-parent="#certInnerAccordion">
+                                                    <div class="accordion-body"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- #5 Confined Space -->
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="csHeading">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#csCollapse"
+                                                        aria-expanded="false" aria-controls="csCollapse">
+                                                        Requirements for Confined Space
+                                                    </button>
+                                                </h2>
+                                                <div id="csCollapse" class="accordion-collapse collapse"
+                                                    aria-labelledby="csHeading" data-bs-parent="#certInnerAccordion">
+                                                    <div class="accordion-body"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- #6 Power Tools -->
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="ptHeading">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#ptCollapse"
+                                                        aria-expanded="false" aria-controls="ptCollapse">
+                                                        Certificate requirements for Power Tools Operation
+                                                    </button>
+                                                </h2>
+                                                <div id="ptCollapse" class="accordion-collapse collapse"
+                                                    aria-labelledby="ptHeading" data-bs-parent="#certInnerAccordion">
+                                                    <div class="accordion-body"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- #7 Hot Work -->
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="hwHeading">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#hwCollapse"
+                                                        aria-expanded="false" aria-controls="hwCollapse">
+                                                        Certificate requirements for Hot work Activity
+                                                    </button>
+                                                </h2>
+                                                <div id="hwCollapse" class="accordion-collapse collapse"
+                                                    aria-labelledby="hwHeading" data-bs-parent="#certInnerAccordion">
+                                                    <div class="accordion-body">
+                                                        <!-- Hot Work Activity -->
+                                                        <div class="mb-3 d-flex align-items-center gap-4">
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="hotworkApplicable" id="hotworkYes" value="yes"
+                                                                    checked>
+                                                                <label class="form-check-label"
+                                                                    for="hotworkYes">Applicable</label>
+                                                            </div>
+                                                            <div class="form-check form-check-inline">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="hotworkApplicable" id="hotworkNo" value="no">
+                                                                <label class="form-check-label" for="hotworkNo">Not
+                                                                    Applicable</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <p class="mb-3 fw-semibold">Disclaimer - Once the permit is
+                                                            approved HWP should be obtained.</p>
+
+                                                        <div class="row g-3">
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Fire Warden <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input id="hwFireWardenText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button" data-file-btn="hwFireWardenFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="hwFireWardenFile" type="file"
+                                                                        class="d-none"
+                                                                        data-file-text="hwFireWardenText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Hot work Equipment Certificate
+                                                                    <span class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input id="hwEquipCertText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button" data-file-btn="hwEquipCertFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="hwEquipCertFile" type="file"
+                                                                        class="d-none" data-file-text="hwEquipCertText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <label class="form-label">Hot work operator competency
+                                                                    certificate <span
+                                                                        class="text-danger">*</span></label>
+                                                                <div class="input-group">
+                                                                    <input id="hwOperatorCertText" type="text"
+                                                                        class="form-control" placeholder="Attach File"
+                                                                        readonly>
+                                                                    <button
+                                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                                        type="button"
+                                                                        data-file-btn="hwOperatorCertFile">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="16" height="16" viewBox="0 0 16 16"
+                                                                            fill="currentColor" aria-hidden="true">
+                                                                            <path
+                                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                                        </svg>
+                                                                        Attach File
+                                                                    </button>
+                                                                    <input id="hwOperatorCertFile" type="file"
+                                                                        class="d-none"
+                                                                        data-file-text="hwOperatorCertText">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-12">
+                                                                <hr>
+                                                            </div>
+
+                                                            <div class="actions py-0 text-center">
+                                                                <button
+                                                                    class="btn btn-secondary py-3 px-4">Cancel</button>
+                                                                <button class="btn btn-secondary py-3 px-4">Save as
+                                                                    Draft</button>
+                                                                <button
+                                                                    class="btn btn-secondary py-3 px-4">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div><!-- /#certInnerAccordion -->
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTweleve">
+                                        Drawing
+                                    </button>
+                                </h2>
+                                <div id="collapseTweleve" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Upload File -->
+                                        <div class="mb-3 row">
+                                            <div class="col-lg-4">
+                                                <label class="form-label">Upload File</label>
+                                                <div class="input-group">
+                                                    <input id="uploadText1" type="text" class="form-control"
+                                                        placeholder="Attach File" readonly>
+                                                    <button
+                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                        type="button" data-file-btn="uploadFile1">
+                                                        <!-- paperclip icon -->
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                                            <path
+                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                        </svg>
+                                                        <span>Attach File</span>
+                                                    </button>
+                                                    <input id="uploadFile1" type="file" class="d-none"
+                                                        data-file-text="uploadText1">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <hr>
+                                            </div>
+                                            <div class="actions py-0 text-center">
+                                                <button class="btn btn-secondary py-3 px-4">Cancel</button>
+                                                <button class="btn btn-secondary py-3 px-4">Save as
+                                                    Draft</button>
+                                                <button class="btn btn-secondary py-3 px-4">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThirteen">
+                                        Additional Regulations/Documents
+                                    </button>
+                                </h2>
+                                <div id="collapseThirteen" class="accordion-collapse collapse"
+                                    data-bs-parent="#ptwAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Upload File -->
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <label class="form-label">Upload File <span
+                                                        class="text-danger">*</span></label>
+                                                <div class="input-group">
+                                                    <input id="mewpUploadText" type="text" class="form-control"
+                                                        placeholder="Attach File" readonly>
+                                                    <button
+                                                        class="btn btn-primary d-inline-flex align-items-center gap-2"
+                                                        type="button" data-file-btn="mewpUpload">
+                                                        <!-- paperclip icon -->
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                                            <path
+                                                                d="M4.5 6.5v5a3 3 0 0 0 6 0V4.75a2.25 2.25 0 0 0-4.5 0v5a1.5 1.5 0 0 0 3 0V6.5h1v3.25a2.5 2.5 0 1 1-5 0V4.75a3.25 3.25 0 1 1 6.5 0v6.75a4 4 0 1 1-8 0v-5h1z" />
+                                                        </svg>
+                                                        <span>Attach File</span>
+                                                    </button>
+                                                    <input id="mewpUpload" type="file" class="d-none"
+                                                        data-file-text="mewpUploadText">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Terms & Conditions agree -->
+                        <div class="form-check d-flex align-items-center pt-4 gap-2 mb-3">
+                            <input class="form-check-input" type="checkbox" id="agreeTerms" required checked>
+                            <label class="form-check-label" for="agreeTerms">
+                                By filling this, you agree to our
+                                <a href="#" class="text-decoration-underline" data-bs-toggle="modal"
+                                    data-bs-target="#termsModal">Terms & Conditions</a>
+                            </label>
+                        </div>
+
+                        <div class="actions py-5 text-center">
+                            <button class="btn btn-primary py-3 px-4" data-bs-toggle="modal"
+                                data-bs-target="#confirmDeleteModal">Delete</button>
+                            <button class="btn btn-primary py-3 px-4">Cancel</button>
+                            <button class="btn btn-primary py-3 px-4" data-bs-toggle="modal"
+                                data-bs-target="#historyModal">View Transaction History</button>
+                            <button class="btn btn-primary py-3 px-4">Save as Draft</button>
+                            <button class="btn btn-primary py-3 px-4 disabled">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+    <!-- TERMS & CONDITIONS MODAL (Bootstrap 5) -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content px-3 py-2">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsTitle">
+                        Terms and Conditions (PTW Requestor & Project Manager to read and comply with below terms &
+                        conditions)
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <ol class="mb-0 ps-3">
+                        <li>The ADA Permit to Work is only applicable to the area specified by the Requestor.</li>
+                        <li>Requestor/Project Manager must send official notification to stakeholders prior to work
+                            commencement.</li>
+                        <li>The PTW Requestor must display the approved ADA Permit to Work in a conspicuous location and
+                            keep it available at the site(s), including all required NOCs for audit and inspection.</li>
+                        <li>The PTW Requestor must comply with all applicable safety regulations set by ADA, ADOSH,
+                            GCAA, Aviation Security Regulations, and other relevant Abu Dhabi SRA.</li>
+                        <li>The PTW Requestor is responsible for securing all required passes for their materials,
+                            personnel, and equipment.</li>
+                        <li>The PTW Requestor shall ensure that all designs are approved by the ADA Relevant Department
+                            and Fire Safety Department for any building/land-use changes within any ADA owned
+                            facilities/premises before PTW submission. This PTW process does not include approval of the
+                            designs.</li>
+                        <li>The PTW Requestor shall ensure that ADA Relevant Department and Fire Safety Department
+                            approve all materials to be used for any modification within ADA owned facilities/premises
+                            before PTW submission. This PTW process does not include approval of the materials.</li>
+                        <li>The ADA EHS Delegated Department must obtain all required approvals/NOCs as per ADA EHS PTW
+                            Procedure prior to commencement of the planned activities.</li>
+                        <li>The PTW Requestor must submit all requirements to the ADA EHS Delegated Department to obtain
+                            ADA FSS Isolation Permit approval prior to any Airport FLS system isolation/interruption.
+                        </li>
+                        <li>The PTW Requestor must ensure site safety arrangements are implemented prior to and during
+                            execution of the planned activities.</li>
+                        <li>The PTW Requestor must ensure proper housekeeping at all times; all waste/FOD generated
+                            during the activities shall be disposed of accordingly.</li>
+                        <li>The PTW Requestor must reinstate, replace, or repair any airport asset(s) damaged during
+                            execution of the activities.</li>
+                        <li>The PTW Requestor shall ensure a valid Permit to Work is maintained during the work; no
+                            activities may commence after the permit has expired.</li>
+                        <li>The PTW Requestor/Project Manager is responsible for keeping all certificates valid for the
+                            duration of the PTW.</li>
+                        <li>For locations requiring keys or access cards, the request must be processed per the Key
+                            Management procedure.</li>
+                        <li>The PTW Requestor is responsible for notifying the ADA EHS Delegated Department
+                            Representative <strong>3 weeks</strong> prior to permit expiry for extension/renewal.</li>
+                        <li>For PTW extension/renewal, the contract number, scope of work, and locations must reflect
+                            the previously approved PTW.</li>
+                        <li>Any non-compliance with the approved Method Statement, Risk Assessment, or any unsafe act
+                            observed by ADA EHS/ADA FM/ADA EHS Delegated Department/ADA stakeholders or representatives
+                            may result in suspension or cancellation of the PTW.</li>
+                        <li>If the contractor fails to comply with the conditions of the approved PTW and submitted
+                            documents, AD Airports reserves the right to suspend the works and take further action
+                            against the contractor and project manager.</li>
+                        <li>This PTW does not absolve the project team of responsibility to ensure works are carried out
+                            in accordance with regulatory requirements, applicable codes, and airport procedures.</li>
+                        <li>This permit is subject to cancellation at any time if the bearer/contractor does not follow
+                            the terms and conditions.</li>
+                        <li>The PTW Requestor/Project Manager must notify the ADA EHS Delegated Department
+                            Representative once activities are completed. The PTW will be closed only upon confirmation
+                            from the ADA Relevant Department.</li>
+                    </ol>
+                </div>
+
+                <div class="modal-footer justify-content-center gap-3">
+                    <button type="button" class="btn btn-primary py-3 px-4" id="btnAgree" data-bs-dismiss="modal">I
+                        Agree</button>
+                    <button type="button" class="btn btn-primary py-3 px-4" data-bs-dismiss="modal">Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TRANSACTION HISTORY MODAL -->
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyTitle" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="historyTitle">Transaction History</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table mb-0 align-middle transaction-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 110px;">s.no <span class="sort">↕</span></th>
+                                    <th>Form Name <span class="sort">↕</span></th>
+                                    <th style="width: 180px;">Status <span class="sort">↕</span></th>
+                                    <th style="width: 200px;">Action Date <span class="sort">↕</span></th>
+                                    <th style="width: 220px;">User Name <span class="sort">↕</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Form name 1</td>
+                                    <td>Status</td>
+                                    <td>12/04/2025</td>
+                                    <td>Product Admin</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td>Form name 2</td>
+                                    <td>Status</td>
+                                    <td>12/04/2025</td>
+                                    <td>Data Scientist</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary py-3 px-4" data-bs-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONFIRM DELETE POPUP -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true"
+        aria-labelledby="confirmDeleteTitle">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 640px;">
+            <div class="modal-content border-0 rounded-3 shadow-lg">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body text-center pt-0 pb-4">
+                    <h3 id="confirmDeleteTitle" class="mb-4">
+                        Are you sure you<br>want to delete request?
+                    </h3>
+
+                    <button id="confirmDeleteOk" type="button" class="btn mx-auto btn-primary px-5 py-3 rounded-2"
+                        data-bs-dismiss="modal">
+                        Ok
+                    </button>
+                    <!-- If you want a cancel button, uncomment:
+                <button type="button" class="btn btn-outline-secondary ms-2 px-4 py-3 rounded-2" data-bs-dismiss="modal">Cancel</button>
+                -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
+        <script>
+            document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+                new bootstrap.Tooltip(el);
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                flatpickr('#liabilityExpiryWrap', {
+                    wrap: true, // enables the button to toggle
+                    dateFormat: 'd/m/Y', // DD/MM/YYYY
+                    allowInput: true, // let users type as well
+                    // disableMobile: true // uncomment for a consistent picker on mobile
+                });
+            });
+        </script>
+        <script>
+            // Run after DOM is ready
+            document.addEventListener('DOMContentLoaded', () => {
+                // Open the file picker (event delegation)
+                document.addEventListener('click', (e) => {
+                    const trigger = e.target.closest('.file-trigger');
+                    if (!trigger) return;
+                    const group = trigger.closest('.file-group');
+                    group.querySelector('.file-input').click();
+                });
+
+                // Show chosen filename
+                document.addEventListener('change', (e) => {
+                    if (!e.target.matches('.file-input')) return;
+                    const group = e.target.closest('.file-group');
+                    const out = group.querySelector('.file-name');
+                    out.value = e.target.files && e.target.files[0] ? e.target.files[0].name : '';
+                });
+            });
+        </script>
+
+        <script>
+            (function () {
+                const acc = document.getElementById('ptwAccordion');
+                const triggers = acc.querySelectorAll('.doc-item__trigger');
+
+                // Optional: open first item on load
+                // open(triggers[0]);
+
+                triggers.forEach(btn => {
+                    btn.addEventListener('click', () => toggle(btn, true));
+                    btn.addEventListener('keydown', onKeyNav);
+                });
+
+                function toggle(btn, closeOthers = false) {
+                    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+                    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+                    if (closeOthers) {
+                        triggers.forEach(other => {
+                            if (other !== btn) close(other);
+                        });
+                    }
+                    isOpen ? close(btn) : open(btn);
+                }
+
+                function open(btn) {
+                    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+                    btn.setAttribute('aria-expanded', 'true');
+                    panel.hidden = false;
+                    // let CSS handle the animation via class
+                    requestAnimationFrame(() => panel.classList.add('is-open'));
+                }
+
+                function close(btn) {
+                    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+                    btn.setAttribute('aria-expanded', 'false');
+                    panel.classList.remove('is-open');
+                    // wait for transition to end before setting hidden
+                    panel.addEventListener('transitionend', function onEnd(e) {
+                        if (e.propertyName === 'grid-template-rows') {
+                            panel.hidden = true;
+                            panel.removeEventListener('transitionend', onEnd);
+                        }
+                    });
+                }
+
+                // Keyboard navigation (Up/Down/Home/End)
+                function onKeyNav(e) {
+                    const keys = ['ArrowUp', 'ArrowDown', 'Home', 'End'];
+                    if (!keys.includes(e.key)) return;
+
+                    e.preventDefault();
+                    const items = Array.from(triggers);
+                    const i = items.indexOf(e.currentTarget);
+
+                    let next;
+                    if (e.key === 'ArrowUp') next = i > 0 ? items[i - 1] : items[items.length - 1];
+                    if (e.key === 'ArrowDown') next = i < items.length - 1 ? items[i + 1] : items[0];
+                    if (e.key === 'Home') next = items[0];
+                    if (e.key === 'End') next = items[items.length - 1];
+                    next && next.focus();
+                }
+            })();
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // For every upload row like:
+                // <div class="input-group ptw-input-group">
+                //   <input type="text" class="form-control" readonly>
+                //   <button class="btn btn-attach">Attach File</button>
+                //   <input type="file" class="d-none" multiple>
+                // </div>
+                // and optional <ul class="file-list"> or existing UL next to it
+                const groups = document.querySelectorAll('.ptw-input-group');
+
+                groups.forEach((group) => {
+                    const fileInput = group.querySelector('input[type="file"]');
+                    const textInput = group.querySelector('input[type="text"]');
+                    const attachBtn = group.querySelector('.btn-attach');
+
+                    // try to find a UL to show files: first a sibling UL, else a nearby .file-list
+                    let fileList = group.parentElement.querySelector('ul') || group.parentElement
+                        .querySelector('.file-list');
+
+                    // If nothing present, we can create one (optional). Comment out if you don't want a list.
+                    if (!fileList) {
+                        fileList = document.createElement('ul');
+                        fileList.className = 'list-unstyled mt-3 mb-0';
+                        group.parentElement.appendChild(fileList);
+                    }
+
+                    if (!fileInput || !textInput || !attachBtn) return;
+
+                    // Store per group
+                    const store = new Map();
+                    const uid = () => (crypto ?.randomUUID ?.() || (Math.random().toString(36).slice(
+                        2) + Date.now().toString(36)))
+
+                    const openPicker = (e) => {
+                        e ?.preventDefault ?.();
+                        fileInput.click();
+                    };
+
+                    function render() {
+                        // text box summary
+                        const count = store.size;
+                        textInput.value = count === 0 ?
+                            '' :
+                            (count === 1 ? [...store.values()][0].name : `${count} files attached`);
+
+                        // list items
+                        fileList.innerHTML = '';
+                        store.forEach((file, id) => {
+                            const li = document.createElement('li');
+                            li.className =
+                                'd-flex align-items-center justify-content-between py-1';
+
+                            const a = document.createElement('a');
+                            a.className = 'ptw-file';
+                            a.textContent = file.name;
+                            a.href = URL.createObjectURL(file);
+                            a.download = file.name;
+
+                            const del = document.createElement('button');
+                            del.type = 'button';
+                            del.className = 'btn btn-link p-0 text-primary ptw-del';
+                            del.setAttribute('aria-label', 'Delete');
+                            del.innerHTML = `
+          <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.25 3.5H13.5V2.75C13.5 2.15326 13.2629 1.58097 12.841 1.15901C12.419 0.737053 11.8467 0.5 11.25 0.5H6.75C6.15326 0.5 5.58097 0.737053 5.15901 1.15901C4.73705 1.58097 4.5 2.15326 4.5 2.75V3.5H0.75C0.551088 3.5 0.360322 3.57902 0.21967 3.71967C0.0790178 3.86032 0 4.05109 0 4.25C0 4.44891 0.0790178 4.63968 0.21967 4.78033C0.360322 4.92098 0.551088 5 0.75 5H1.5V18.5C1.5 18.8978 1.65804 19.2794 1.93934 19.5607C2.22064 19.842 2.60218 20 3 20H15C15.3978 20 15.7794 19.842 16.0607 19.5607C16.342 19.2794 16.5 18.8978 16.5 18.5V5H17.25C17.4489 5 17.6397 4.92098 17.7803 4.78033C17.921 4.63968 18 4.44891 18 4.25C18 4.05109 17.921 3.86032 17.7803 3.71967C17.6397 3.57902 17.4489 3.5 17.25 3.5ZM6 2.75C6 2.55109 6.07902 2.36032 6.21967 2.21967C6.36032 2.07902 6.55109 2 6.75 2H11.25C11.4489 2 11.6397 2.07902 11.7803 2.21967C11.921 2.36032 12 2.55109 12 2.75V3.5H6V2.75ZM15 18.5H3V5H15V18.5ZM7.5 8.75V14.75C7.5 14.9489 7.42098 15.1397 7.28033 15.2803C7.13968 15.421 6.94891 15.5 6.75 15.5C6.55109 15.5 6.36032 15.421 6.21967 15.2803C6.07902 15.1397 6 14.9489 6 14.75V8.75C6 8.55109 6.07902 8.36032 6.21967 8.21967C6.36032 8.07902 6.55109 8 6.75 8C6.94891 8 7.13968 8.07902 7.28033 8.21967C7.42098 8.36032 7.5 8.55109 7.5 8.75ZM12 8.75V14.75C12 14.9489 11.921 15.1397 11.7803 15.2803C11.6397 15.421 11.4489 15.5 11.25 15.5C11.0511 15.5 10.8603 15.421 10.7197 15.2803C10.579 15.1397 10.5 14.9489 10.5 14.75V8.75C10.5 8.55109 10.579 8.36032 10.7197 8.21967C10.8603 8.07902 11.0511 8 11.25 8C11.4489 8 11.6397 8.07902 11.7803 8.21967C11.921 8.36032 12 8.55109 12 8.75Z" fill="#001871"/>
+          </svg>`;
+
+                            del.addEventListener('click', () => {
+                                try {
+                                    if (a.href && a.href.startsWith('blob:')) URL
+                                        .revokeObjectURL(a.href);
+                                } catch {}
+                                store.delete(id);
+                                render();
+                            });
+
+                            li.appendChild(a);
+                            li.appendChild(del);
+                            fileList.appendChild(li);
+                        });
+                    }
+
+                    // open picker from button or clicking the readonly text box
+                    attachBtn.addEventListener('click', openPicker);
+                    textInput.addEventListener('click', openPicker);
+                    textInput.setAttribute('tabindex', '0');
+                    textInput.setAttribute('readonly', 'readonly');
+                    textInput.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            openPicker();
+                        }
+                    });
+
+                    // when files are selected, add to this group's store
+                    fileInput.addEventListener('change', (e) => {
+                        const files = Array.from(e.target.files || []);
+                        files.forEach((f) => store.set(uid(), f));
+                        fileInput.value = ''; // allow picking the same file again
+                        render();
+                    });
+
+                    // initial render
+                    render();
+                });
+            });
+        </script>
+
+        <script>
+            (function () {
+                // initialize all flatpickr wrappers once
+                function initAllFlatpickrs(root = document) {
+                    const common = {
+                        dateFormat: 'd/m/Y',
+                        allowInput: true,
+                        wrap: true
+                    };
+
+                    root.querySelectorAll('.flatpickr[data-wrap="true"]').forEach(el => {
+                        if (el._flatpickr) return; // already initialized
+                        flatpickr(el, common);
+                    });
+                }
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    initAllFlatpickrs();
+
+                    // also catch anything added later (e.g., when accordion panes render)
+                    const mo = new MutationObserver(muts => {
+                        muts.forEach(m => m.addedNodes.forEach(n => {
+                            if (n.nodeType !== 1) return;
+                            // if a wrapper or it contains wrappers, init them
+                            if (n.matches ?.('.flatpickr[data-wrap="true"]'))
+                                initAllFlatpickrs(n.parentNode || document);
+                            else initAllFlatpickrs(n);
+                        }));
+                    });
+                    mo.observe(document.body, {
+                        childList: true,
+                        subtree: true
+                    });
+                });
+            })();
+        </script>
+        <script>
+            document.querySelectorAll('[data-file-btn]').forEach(btn => {
+                const id = btn.getAttribute('data-file-btn');
+                const input = document.getElementById(id);
+                const textId = input.getAttribute('data-file-text');
+                const text = document.getElementById(textId);
+
+                btn.addEventListener('click', () => input.click());
+                input.addEventListener('change', e => {
+                    text.value = e.target.files && e.target.files[0] ? e.target.files[0].name : '';
+                });
+            });
+        </script>
+
+        <script>
+            // Optional: auto-check a consent checkbox when agreeing
+            // Replace '#agreeTerms' with your checkbox id if you use this behavior.
+            document.getElementById('btnAgree') ?.addEventListener('click', function () {
+                const cb = document.getElementById('agreeTerms');
+                if (cb) cb.checked = true;
+            });
+        </script>
+
+        <script>
+            // Handle the OK action (hook your delete logic here)
+            document.getElementById('confirmDeleteOk') ?.addEventListener('click', () => {
+                // deleteRequest(); // your function
+                console.log('Delete confirmed');
+            });
+        </script>
+    </footer>
+
+    <!-- pagescript here... -->
+    <script></script>
+    <!-- End pagescript here... -->
+</body>
+
+</html>
